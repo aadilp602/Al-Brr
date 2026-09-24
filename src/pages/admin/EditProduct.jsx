@@ -1,41 +1,143 @@
-import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useEffect, useState } from 'react'
+import { useNavigate, useParams } from 'react-router-dom'
 
-const initialForm = {
-  name: '',
-  sku: '',
-  category: '',
-  brand: 'Al Brr',
-  price: '',
-  discountPrice: '',
-  gst: '',
-  size: '',
-  fragranceFamily: '',
-  gender: '',
-  shortDescription: '',
-  description: '',
-  stock: '',
-  lowStockThreshold: '10',
-  active: true,
-  featured: false,
-  newArrival: false,
-  bestSeller: false,
-}
-
-function AddProduct() {
+function EditProduct() {
   const navigate = useNavigate()
+  const { id } = useParams()
 
-  const [form, setForm] = useState(initialForm)
+  const [form, setForm] = useState({
+    name: '',
+    sku: '',
+    category: '',
+    brand: 'Al Brr',
+    price: '',
+    discountPrice: '',
+    gst: '',
+    size: '',
+    fragranceFamily: '',
+    gender: '',
+    shortDescription: '',
+    description: '',
+    stock: '',
+    lowStockThreshold: '10',
+    active: true,
+    featured: false,
+    newArrival: false,
+    bestSeller: false,
+  })
+
   const [image, setImage] = useState('')
   const [imageName, setImageName] = useState('')
   const [errors, setErrors] = useState({})
+  const [loading, setLoading] = useState(true)
+  const [productFound, setProductFound] = useState(true)
+
+  /* =========================================================
+     LOAD PRODUCT
+  ========================================================= */
+
+  useEffect(() => {
+    try {
+      const savedProducts = JSON.parse(
+        localStorage.getItem('al-brr-admin-products') || '[]'
+      )
+
+      const product = savedProducts.find(
+        (item) => String(item.id) === String(id)
+      )
+
+      if (!product) {
+        setProductFound(false)
+        setLoading(false)
+        return
+      }
+
+      setForm({
+        name: product.name || '',
+        sku: product.sku || '',
+        category: product.category || '',
+        brand: product.brand || 'Al Brr',
+
+        price:
+          product.price === null ||
+          product.price === undefined
+            ? ''
+            : product.price,
+
+        discountPrice:
+          product.discountPrice === null ||
+          product.discountPrice === undefined
+            ? ''
+            : product.discountPrice,
+
+        gst:
+          product.gst === null ||
+          product.gst === undefined
+            ? ''
+            : product.gst,
+
+        size: product.size || '',
+
+        fragranceFamily:
+          product.fragranceFamily || '',
+
+        gender: product.gender || '',
+
+        shortDescription:
+          product.shortDescription || '',
+
+        description:
+          product.description || '',
+
+        stock:
+          product.stock === null ||
+          product.stock === undefined
+            ? ''
+            : product.stock,
+
+        lowStockThreshold:
+          product.lowStockThreshold === null ||
+          product.lowStockThreshold === undefined
+            ? '10'
+            : product.lowStockThreshold,
+
+        active:
+          product.active !== undefined
+            ? Boolean(product.active)
+            : product.status === 'Active',
+
+        featured: Boolean(product.featured),
+
+        newArrival: Boolean(product.newArrival),
+
+        bestSeller: Boolean(product.bestSeller),
+      })
+
+      setImage(product.image || '')
+      setImageName(product.imageName || '')
+
+      setLoading(false)
+    } catch (error) {
+      console.error('Unable to load product:', error)
+
+      setProductFound(false)
+      setLoading(false)
+    }
+  }, [id])
+
+  /* =========================================================
+     INPUT CHANGE
+  ========================================================= */
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target
 
     setForm((prev) => ({
       ...prev,
-      [name]: type === 'checkbox' ? checked : value,
+      [name]:
+        type === 'checkbox'
+          ? checked
+          : value,
     }))
 
     setErrors((prev) => ({
@@ -43,6 +145,10 @@ function AddProduct() {
       [name]: '',
     }))
   }
+
+  /* =========================================================
+     IMAGE
+  ========================================================= */
 
   const handleImage = (e) => {
     const file = e.target.files?.[0]
@@ -54,15 +160,16 @@ function AddProduct() {
         ...prev,
         image: 'Please select a valid image.',
       }))
+
       return
     }
 
-    // 2MB limit because image is currently stored in localStorage
     if (file.size > 2 * 1024 * 1024) {
       setErrors((prev) => ({
         ...prev,
         image: 'Image must be smaller than 2MB.',
       }))
+
       return
     }
 
@@ -86,33 +193,42 @@ function AddProduct() {
     setImageName('')
   }
 
+  /* =========================================================
+     VALIDATION
+  ========================================================= */
+
   const validate = () => {
     const newErrors = {}
 
     if (!form.name.trim()) {
-      newErrors.name = 'Product name is required.'
+      newErrors.name =
+        'Product name is required.'
     }
 
     if (!form.category) {
-      newErrors.category = 'Category is required.'
+      newErrors.category =
+        'Category is required.'
     }
 
     if (!form.gender) {
-      newErrors.gender = 'Gender is required.'
+      newErrors.gender =
+        'Gender is required.'
     }
 
     if (
       form.price === '' ||
       Number(form.price) < 0
     ) {
-      newErrors.price = 'Enter a valid price.'
+      newErrors.price =
+        'Enter a valid price.'
     }
 
     if (
       form.stock === '' ||
       Number(form.stock) < 0
     ) {
-      newErrors.stock = 'Enter valid stock quantity.'
+      newErrors.stock =
+        'Enter valid stock quantity.'
     }
 
     if (
@@ -127,118 +243,212 @@ function AddProduct() {
       form.gst !== '' &&
       Number(form.gst) < 0
     ) {
-      newErrors.gst = 'Enter valid GST.'
+      newErrors.gst =
+        'Enter valid GST.'
     }
 
     setErrors(newErrors)
 
-    return Object.keys(newErrors).length === 0
+    return (
+      Object.keys(newErrors).length === 0
+    )
   }
+
+  /* =========================================================
+     UPDATE PRODUCT
+  ========================================================= */
 
   const handleSubmit = (e) => {
     e.preventDefault()
 
     if (!validate()) return
 
-    const now = Date.now()
-
-    const slug = form.name
-      .trim()
-      .toLowerCase()
-      .replace(/[^a-z0-9]+/g, '-')
-      .replace(/^-|-$/g, '')
-
-    const product = {
-      id: `${slug}-${now}`,
-
-      name: form.name.trim(),
-
-      sku:
-        form.sku.trim() ||
-        `AB-${now.toString().slice(-6)}`,
-
-      category: form.category,
-
-      brand:
-        form.brand.trim() || 'Al Brr',
-
-      price: Number(form.price),
-
-      discountPrice:
-        form.discountPrice === ''
-          ? null
-          : Number(form.discountPrice),
-
-      gst:
-        form.gst === ''
-          ? null
-          : Number(form.gst),
-
-      size: form.size.trim(),
-
-      fragranceFamily:
-        form.fragranceFamily.trim(),
-
-      gender: form.gender,
-
-      shortDescription:
-        form.shortDescription.trim(),
-
-      description:
-        form.description.trim(),
-
-      stock: Number(form.stock),
-
-      lowStockThreshold:
-        form.lowStockThreshold === ''
-          ? 10
-          : Number(form.lowStockThreshold),
-
-      status:
-        form.active
-          ? 'Active'
-          : 'Inactive',
-
-      active: form.active,
-      featured: form.featured,
-      newArrival: form.newArrival,
-      bestSeller: form.bestSeller,
-
-      image,
-      imageName,
-
-      createdAt: new Date().toISOString(),
-      updatedAt: new Date().toISOString(),
-    }
-
     try {
-      const existingProducts = JSON.parse(
+      const savedProducts = JSON.parse(
         localStorage.getItem(
           'al-brr-admin-products'
         ) || '[]'
       )
 
+      const productIndex =
+        savedProducts.findIndex(
+          (item) =>
+            String(item.id) === String(id)
+        )
+
+      if (productIndex === -1) {
+        setErrors({
+          save: 'Product could not be found.',
+        })
+
+        return
+      }
+
+      const oldProduct =
+        savedProducts[productIndex]
+
+      const updatedProduct = {
+        ...oldProduct,
+
+        name: form.name.trim(),
+
+        sku:
+          form.sku.trim() ||
+          oldProduct.sku ||
+          `AB-${Date.now()
+            .toString()
+            .slice(-6)}`,
+
+        category: form.category,
+
+        brand:
+          form.brand.trim() || 'Al Brr',
+
+        price: Number(form.price),
+
+        discountPrice:
+          form.discountPrice === ''
+            ? null
+            : Number(form.discountPrice),
+
+        gst:
+          form.gst === ''
+            ? null
+            : Number(form.gst),
+
+        size: form.size.trim(),
+
+        fragranceFamily:
+          form.fragranceFamily.trim(),
+
+        gender: form.gender,
+
+        shortDescription:
+          form.shortDescription.trim(),
+
+        description:
+          form.description.trim(),
+
+        stock: Number(form.stock),
+
+        lowStockThreshold:
+          form.lowStockThreshold === ''
+            ? 10
+            : Number(
+                form.lowStockThreshold
+              ),
+
+        active: form.active,
+
+        status:
+          form.active
+            ? 'Active'
+            : 'Inactive',
+
+        featured: form.featured,
+
+        newArrival:
+          form.newArrival,
+
+        bestSeller:
+          form.bestSeller,
+
+        image,
+
+        imageName,
+
+        updatedAt:
+          new Date().toISOString(),
+      }
+
+      const updatedProducts = [
+        ...savedProducts,
+      ]
+
+      updatedProducts[productIndex] =
+        updatedProduct
+
       localStorage.setItem(
         'al-brr-admin-products',
-        JSON.stringify([
-          product,
-          ...existingProducts,
-        ])
+        JSON.stringify(updatedProducts)
       )
 
       navigate('/admin/products')
     } catch (error) {
       console.error(
-        'Unable to save product:',
+        'Unable to update product:',
         error
       )
 
-      setErrors((prev) => ({
-        ...prev,
+      setErrors({
         save:
-          'Product could not be saved. Try a smaller image.',
-      }))
+          'Product could not be updated. Try again.',
+      })
     }
+  }
+
+  /* =========================================================
+     LOADING
+  ========================================================= */
+
+  if (loading) {
+    return (
+      <div className="admin-add-product-page">
+        <section className="admin-add-section">
+          <p>Loading product...</p>
+        </section>
+      </div>
+    )
+  }
+
+  /* =========================================================
+     PRODUCT NOT FOUND
+  ========================================================= */
+
+  if (!productFound) {
+    return (
+      <div className="admin-add-product-page">
+
+        <div className="admin-add-product-header">
+          <div>
+            <p className="admin-page-eyebrow">
+              PRODUCT MANAGEMENT
+            </p>
+
+            <h1>Product Not Found</h1>
+
+            <p className="admin-page-description">
+              This product could not be found.
+            </p>
+          </div>
+        </div>
+
+        <section className="admin-add-section">
+
+          <p
+            style={{
+              marginBottom: '20px',
+              color: '#777',
+            }}
+          >
+            The product may have been deleted
+            or the URL is incorrect.
+          </p>
+
+          <button
+            type="button"
+            className="admin-add-save-btn"
+            onClick={() =>
+              navigate('/admin/products')
+            }
+          >
+            Back to Products
+          </button>
+
+        </section>
+
+      </div>
+    )
   }
 
   return (
@@ -249,6 +459,7 @@ function AddProduct() {
       <div className="admin-add-product-header">
 
         <div>
+
           <button
             type="button"
             className="admin-add-back"
@@ -263,13 +474,15 @@ function AddProduct() {
             PRODUCT MANAGEMENT
           </p>
 
-          <h1>Add Product</h1>
+          <h1>Edit Product</h1>
 
           <p className="admin-page-description">
-            Create a new fragrance for your
-            Al Brr catalogue.
+            Update product information,
+            pricing and inventory.
           </p>
+
         </div>
+
 
         <div className="admin-add-header-actions">
 
@@ -285,10 +498,10 @@ function AddProduct() {
 
           <button
             type="submit"
-            form="add-product-form"
+            form="edit-product-form"
             className="admin-add-save-btn"
           >
-            Save Product
+            Update Product
           </button>
 
         </div>
@@ -299,29 +512,37 @@ function AddProduct() {
       {/* ================= FORM ================= */}
 
       <form
-        id="add-product-form"
+        id="edit-product-form"
         onSubmit={handleSubmit}
         className="admin-add-product-layout"
       >
 
+        {/* ================= LEFT ================= */}
+
         <div className="admin-add-product-main">
 
-          {/* ================= BASIC INFORMATION ================= */}
+
+          {/* BASIC INFORMATION */}
 
           <section className="admin-add-section">
 
             <div className="admin-add-section-heading">
+
               <span>01</span>
 
               <div>
-                <h2>Basic Information</h2>
+                <h2>
+                  Basic Information
+                </h2>
 
                 <p>
-                  Main information customers will
-                  see about this fragrance.
+                  Update the main product
+                  information.
                 </p>
               </div>
+
             </div>
+
 
             <div className="admin-add-fields">
 
@@ -337,7 +558,7 @@ function AddProduct() {
                   name="name"
                   value={form.name}
                   onChange={handleChange}
-                  placeholder="e.g. Al-Durrat"
+                  placeholder="Product name"
                 />
 
                 {errors.name && (
@@ -360,10 +581,6 @@ function AddProduct() {
                   onChange={handleChange}
                   placeholder="e.g. AB-NR-007"
                 />
-
-                <small>
-                  Leave empty to generate automatically.
-                </small>
 
               </div>
 
@@ -465,7 +682,9 @@ function AddProduct() {
                 <input
                   type="text"
                   name="shortDescription"
-                  value={form.shortDescription}
+                  value={
+                    form.shortDescription
+                  }
                   onChange={handleChange}
                   placeholder="Short product summary"
                 />
@@ -485,7 +704,7 @@ function AddProduct() {
                   value={form.description}
                   onChange={handleChange}
                   rows="6"
-                  placeholder="Write fragrance story, notes and product details..."
+                  placeholder="Product description..."
                 />
 
               </div>
@@ -500,15 +719,18 @@ function AddProduct() {
           <section className="admin-add-section">
 
             <div className="admin-add-section-heading">
+
               <span>02</span>
 
               <div>
                 <h2>Pricing</h2>
 
                 <p>
-                  Set selling price, discount and tax.
+                  Update product pricing
+                  and tax.
                 </p>
               </div>
+
             </div>
 
 
@@ -522,6 +744,7 @@ function AddProduct() {
                 </label>
 
                 <div className="admin-price-input">
+
                   <span>₹</span>
 
                   <input
@@ -533,6 +756,7 @@ function AddProduct() {
                     step="0.01"
                     placeholder="599"
                   />
+
                 </div>
 
                 {errors.price && (
@@ -552,17 +776,21 @@ function AddProduct() {
                 </label>
 
                 <div className="admin-price-input">
+
                   <span>₹</span>
 
                   <input
                     type="number"
                     name="discountPrice"
-                    value={form.discountPrice}
+                    value={
+                      form.discountPrice
+                    }
                     onChange={handleChange}
                     min="0"
                     step="0.01"
                     placeholder="499"
                   />
+
                 </div>
 
                 {errors.discountPrice && (
@@ -610,20 +838,25 @@ function AddProduct() {
           </section>
 
 
-          {/* ================= FRAGRANCE ================= */}
+          {/* ================= FRAGRANCE DETAILS ================= */}
 
           <section className="admin-add-section">
 
             <div className="admin-add-section-heading">
+
               <span>03</span>
 
               <div>
-                <h2>Fragrance Details</h2>
+                <h2>
+                  Fragrance Details
+                </h2>
 
                 <p>
-                  Additional perfume specifications.
+                  Update perfume
+                  specifications.
                 </p>
               </div>
+
             </div>
 
 
@@ -655,7 +888,9 @@ function AddProduct() {
                 <input
                   type="text"
                   name="fragranceFamily"
-                  value={form.fragranceFamily}
+                  value={
+                    form.fragranceFamily
+                  }
                   onChange={handleChange}
                   placeholder="e.g. Woody, Oriental"
                 />
@@ -672,16 +907,18 @@ function AddProduct() {
           <section className="admin-add-section">
 
             <div className="admin-add-section-heading">
+
               <span>04</span>
 
               <div>
                 <h2>Inventory</h2>
 
                 <p>
-                  Manage available quantity and
-                  low-stock alerts.
+                  Update stock quantity and
+                  threshold.
                 </p>
               </div>
+
             </div>
 
 
@@ -722,7 +959,9 @@ function AddProduct() {
                 <input
                   type="number"
                   name="lowStockThreshold"
-                  value={form.lowStockThreshold}
+                  value={
+                    form.lowStockThreshold
+                  }
                   onChange={handleChange}
                   min="0"
                   step="1"
@@ -742,16 +981,20 @@ function AddProduct() {
 
         <aside className="admin-add-product-side">
 
+
           {/* PRODUCT IMAGE */}
 
           <section className="admin-add-section">
 
             <div className="admin-add-side-heading">
+
               <h2>Product Image</h2>
 
               <p>
-                Upload the main product image.
+                Replace or remove the
+                current product image.
               </p>
+
             </div>
 
 
@@ -789,12 +1032,14 @@ function AddProduct() {
 
                 <img
                   src={image}
-                  alt="Product preview"
+                  alt={form.name}
                 />
 
                 <div>
+
                   <span>
-                    {imageName}
+                    {imageName ||
+                      'Product image'}
                   </span>
 
                   <button
@@ -803,6 +1048,7 @@ function AddProduct() {
                   >
                     Remove
                   </button>
+
                 </div>
 
               </div>
@@ -819,22 +1065,26 @@ function AddProduct() {
           </section>
 
 
-          {/* PRODUCT STATUS */}
+          {/* ================= STATUS ================= */}
 
           <section className="admin-add-section">
 
             <div className="admin-add-side-heading">
+
               <h2>Product Status</h2>
 
               <p>
-                Control where this product appears.
+                Control product visibility
+                and labels.
               </p>
+
             </div>
 
 
             <div className="admin-product-switches">
 
               <label>
+
                 <div>
                   <strong>
                     Active Product
@@ -851,10 +1101,12 @@ function AddProduct() {
                   checked={form.active}
                   onChange={handleChange}
                 />
+
               </label>
 
 
               <label>
+
                 <div>
                   <strong>
                     Featured
@@ -871,10 +1123,12 @@ function AddProduct() {
                   checked={form.featured}
                   onChange={handleChange}
                 />
+
               </label>
 
 
               <label>
+
                 <div>
                   <strong>
                     New Arrival
@@ -888,13 +1142,17 @@ function AddProduct() {
                 <input
                   type="checkbox"
                   name="newArrival"
-                  checked={form.newArrival}
+                  checked={
+                    form.newArrival
+                  }
                   onChange={handleChange}
                 />
+
               </label>
 
 
               <label>
+
                 <div>
                   <strong>
                     Best Seller
@@ -908,9 +1166,12 @@ function AddProduct() {
                 <input
                   type="checkbox"
                   name="bestSeller"
-                  checked={form.bestSeller}
+                  checked={
+                    form.bestSeller
+                  }
                   onChange={handleChange}
                 />
+
               </label>
 
             </div>
@@ -918,40 +1179,50 @@ function AddProduct() {
           </section>
 
 
-          {/* LIVE PREVIEW */}
+          {/* ================= PREVIEW ================= */}
 
           <section className="admin-add-section admin-product-summary">
 
             <p className="admin-page-eyebrow">
-              PREVIEW
+              LIVE PREVIEW
             </p>
 
 
             {image && (
               <div className="admin-summary-image">
+
                 <img
                   src={image}
-                  alt=""
+                  alt={form.name}
                 />
+
               </div>
             )}
 
 
             <h3>
-              {form.name || 'New Fragrance'}
+              {form.name ||
+                'Product Name'}
             </h3>
 
+
             <span>
-              {form.category || 'Collection'}
+              {form.category ||
+                'Collection'}
+
               {' · '}
-              {form.gender || 'Gender'}
+
+              {form.gender ||
+                'Gender'}
             </span>
+
 
             {form.shortDescription && (
               <p>
                 {form.shortDescription}
               </p>
             )}
+
 
             <strong>
               ₹{form.price || '0'}
@@ -985,11 +1256,12 @@ function AddProduct() {
             Cancel
           </button>
 
+
           <button
             type="submit"
             className="admin-add-save-btn"
           >
-            Save Product
+            Update Product
           </button>
 
         </div>
@@ -1000,4 +1272,4 @@ function AddProduct() {
   )
 }
 
-export default AddProduct
+export default EditProduct

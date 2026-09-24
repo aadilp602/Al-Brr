@@ -1,79 +1,122 @@
 import { Outlet, NavLink } from 'react-router-dom'
 
 const menuItems = [
-  { name: 'Dashboard', path: '/admin' },
-  { name: 'Products', path: '/admin/products' },
-  { name: 'Categories', path: '/admin/categories' },
-  { name: 'Inventory', path: '/admin/inventory' },
-  { name: 'Orders', path: '/admin/orders' },
-  { name: 'Customers', path: '/admin/customers' },
-  { name: 'Payments', path: '/admin/payments' },
-  { name: 'Invoices', path: '/admin/invoices' },
-  { name: 'Coupons', path: '/admin/coupons' },
-  { name: 'Reports', path: '/admin/reports' },
-  { name: 'Notifications', path: '/admin/notifications' },
-  { name: 'Users & Roles', path: '/admin/users' },
-  { name: 'Activity Logs', path: '/admin/activity-logs' },
-  { name: 'Settings', path: '/admin/settings' },
+  { name: 'Dashboard', path: '/admin', icon: '⌂' },
+  { name: 'Products', path: '/admin/products', icon: '◇' },
+  { name: 'Categories', path: '/admin/categories', icon: '▦' },
+  { name: 'Inventory', path: '/admin/inventory', icon: '▤' },
+  { name: 'Orders', path: '/admin/orders', icon: '□' },
+  { name: 'Customers', path: '/admin/customers', icon: '♙' },
+  { name: 'Payments', path: '/admin/payments', icon: '₹' },
+  { name: 'Invoices', path: '/admin/invoices', icon: '▧' },
+  { name: 'Coupons', path: '/admin/coupons', icon: '%' },
+  { name: 'Reports', path: '/admin/reports', icon: '⌁' },
+  { name: 'Notifications', path: '/admin/notifications', icon: '○' },
+  { name: 'Users & Roles', path: '/admin/users', icon: '♙' },
+  { name: 'Activity Logs', path: '/admin/activity-logs', icon: '↻' },
+  { name: 'Settings', path: '/admin/settings', icon: '⚙' },
 ]
 
 function AdminLayout() {
   return (
-    <div className="min-h-screen bg-white">
-      {/* Sidebar */}
-      <aside className="fixed left-0 top-0 h-screen w-64 border-r bg-black text-white">
-        <div className="flex h-20 items-center border-b px-6">
-          <h1 className="text-xl font-semibold">
-            Al Brr Perfumes
-          </h1>
+    <div className="admin-shell">
+
+      {/* SIDEBAR */}
+      <aside className="admin-sidebar">
+
+        {/* BRAND */}
+        <div className="admin-brand">
+          <div className="admin-brand-mark">
+            <span>AB</span>
+          </div>
+
+          <div className="admin-brand-copy">
+            <strong>AL BRR</strong>
+            <small>PERFUMES</small>
+          </div>
         </div>
 
-        <nav className="p-4">
+        {/* MENU LABEL */}
+        <div className="admin-menu-label">
+          MANAGEMENT
+        </div>
+
+        {/* NAVIGATION */}
+        <nav className="admin-navigation">
           {menuItems.map((item) => (
             <NavLink
               key={item.path}
               to={item.path}
               end={item.path === '/admin'}
               className={({ isActive }) =>
-                `mb-1 block rounded-lg px-4 py-3 text-sm transition ${
-                  isActive
-                    ? 'bg-white text-black'
-                    : 'text-white hover:bg-white/10'
-                }`
+                isActive
+                  ? 'admin-nav-link admin-nav-link-active'
+                  : 'admin-nav-link'
               }
             >
-              {item.name}
+              <span className="admin-nav-icon">
+                {item.icon}
+              </span>
+
+              <span className="admin-nav-name">
+                {item.name}
+              </span>
             </NavLink>
           ))}
         </nav>
+
+        {/* SIDEBAR FOOTER */}
+        <div className="admin-sidebar-footer">
+          <span>AL BRR</span>
+          <p>Luxury Perfume Administration</p>
+        </div>
+
       </aside>
 
-      {/* Main Area */}
-      <div className="ml-64 min-h-screen">
-        {/* Topbar */}
-        <header className="flex h-20 items-center justify-between border-b bg-white px-8">
-          <div>
-            <h2 className="text-xl font-semibold">
-              Admin Panel
-            </h2>
-          </div>
+      {/* =====================================================
+          MAIN AREA
+      ====================================================== */}
 
-          <div className="flex items-center gap-4">
-            <span className="text-sm text-gray-600">
-              Admin
+      <div className="admin-main">
+
+        {/* TOPBAR */}
+        <header className="admin-topbar">
+
+          <div className="admin-topbar-left">
+            <span className="admin-topbar-eyebrow">
+              AL BRR PERFUMES
             </span>
 
-            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-black text-sm text-white">
+            <h2>Admin Panel</h2>
+          </div>
+
+          <div className="admin-topbar-right">
+
+            <div className="admin-status">
+              <span className="admin-status-dot"></span>
+              ONLINE
+            </div>
+
+            <div className="admin-user-info">
+              <span>Administrator</span>
+              <small>Super Admin</small>
+            </div>
+
+            <div className="admin-avatar">
               A
             </div>
+
           </div>
+
         </header>
 
-        {/* Page Content */}
-        <main className="p-8">
+        {/* PAGE CONTENT */}
+        <main className="admin-page-content">
           <Outlet />
         </main>
+
       </div>
+
     </div>
   )
 }
