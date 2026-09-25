@@ -34,15 +34,15 @@ const products = [
     family: 'Fresh · Aromatic',
   },
   {
-    id: 'alfa-x',
-    name: 'Alfa-X',
+    id: 'alfa-Men',
+    name: 'Alfa-Men',
     category: 'Noir',
     gender: 'MEN',
     inspired: 'INSPIRED BY · DARK ELEGANCE',
     description:
       'A powerful blend of woody, spicy and sensual notes with lasting character.',
     longDescription:
-      'Alfa-X is built around a dark and sophisticated fragrance profile. Woody and spicy notes create depth while the sensual base gives the scent its distinctive character.',
+      'Alfa-Men is built around a dark and sophisticated fragrance profile. Woody and spicy notes create depth while the sensual base gives the scent its distinctive character.',
     price: 599,
     size: '50 ML',
     family: 'Woody · Spicy',

@@ -25,8 +25,8 @@ const products = [
     price: 599,
   },
   {
-    id: 'alfa-x',
-    name: 'Alfa-X',
+    id: 'alfa-Men',
+    name: 'Alfa-Men',
     category: 'Noir',
     gender: 'MEN',
     inspired: 'INSPIRED BY · DARK ELEGANCE',

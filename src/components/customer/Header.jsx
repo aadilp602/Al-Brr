@@ -67,32 +67,27 @@ function Header() {
 
   return (
     <header className="site-header">
-
       <div className="header-inner">
 
         {/* =====================================
-            LOGO
+            LOGO + AL BRR
         ====================================== */}
 
         <Link
           to="/"
-          className="brand"
+          className="brand brand-logo-link"
+          aria-label="Al Brr Perfumes Home"
         >
-          <span className="brand-mark">
-            AB
-          </span>
+          <img
+            src="/images/al-brr-logo.png"
+            alt="Al Brr Perfumes"
+            className="header-brand-logo"
+          />
 
-          <span className="brand-text">
-            <strong>
-              AL BRR
-            </strong>
-
-            <small>
-              PERFUMES
-            </small>
+          <span className="header-brand-name">
+            <strong>AL BRR</strong>
           </span>
         </Link>
-
 
         {/* =====================================
             NAVIGATION
@@ -110,13 +105,10 @@ function Header() {
                 ? 'nav-section-link nav-active'
                 : 'nav-section-link'
             }
-            onClick={() =>
-              scrollToSection('noir')
-            }
+            onClick={() => scrollToSection('noir')}
           >
             NOIR
           </button>
-
 
           {/* ROUGE */}
 
@@ -128,13 +120,10 @@ function Header() {
                 ? 'nav-section-link nav-active'
                 : 'nav-section-link'
             }
-            onClick={() =>
-              scrollToSection('rouge')
-            }
+            onClick={() => scrollToSection('rouge')}
           >
             ROUGE
           </button>
-
 
           {/* STORY */}
 
@@ -146,44 +135,35 @@ function Header() {
                 ? 'nav-section-link nav-active'
                 : 'nav-section-link'
             }
-            onClick={() =>
-              scrollToSection('story')
-            }
+            onClick={() => scrollToSection('story')}
           >
             STORY
           </button>
-
 
           {/* PRODUCTS */}
 
           <NavLink
             to="/products"
             className={({ isActive }) =>
-              isActive
-                ? 'nav-active'
-                : ''
+              isActive ? 'nav-active' : ''
             }
           >
             PRODUCTS
           </NavLink>
-
 
           {/* CONTACT */}
 
           <NavLink
             to="/contact"
             className={({ isActive }) =>
-              isActive
-                ? 'nav-active'
-                : ''
+              isActive ? 'nav-active' : ''
             }
           >
             CONTACT
           </NavLink>
 
-
           {/* =====================================
-              PROFILE / ACCOUNT DROPDOWN
+              PROFILE / ACCOUNT
           ====================================== */}
 
           <div className="account-dropdown">
@@ -212,19 +192,17 @@ function Header() {
               }
             >
 
-              {/* LOGGED IN = FIRST LETTER */}
+              {/* LOGGED IN */}
 
               {currentUser ? (
-
                 <span className="profile-initial">
                   {currentUser.name
                     ?.charAt(0)
                     .toUpperCase()}
                 </span>
-
               ) : (
 
-                /* LOGGED OUT = PROFILE ICON */
+                /* LOGGED OUT */
 
                 <svg
                   viewBox="0 0 24 24"
@@ -245,18 +223,15 @@ function Header() {
                     d="M5.5 20c.7-4 3-6 6.5-6s5.8 2 6.5 6"
                   />
                 </svg>
-
               )}
 
             </button>
 
-
             {/* =====================================
-                DROPDOWN
+                ACCOUNT DROPDOWN
             ====================================== */}
 
             {accountOpen && (
-
               <div className="account-dropdown-menu">
 
                 {currentUser ? (
@@ -266,9 +241,7 @@ function Header() {
                   ============================== */
 
                   <>
-
                     <div className="account-dropdown-user">
-
                       <span>
                         WELCOME
                       </span>
@@ -276,9 +249,7 @@ function Header() {
                       <strong>
                         {currentUser.name}
                       </strong>
-
                     </div>
-
 
                     {/* MY ACCOUNT */}
 
@@ -291,7 +262,6 @@ function Header() {
                       MY ACCOUNT
                     </Link>
 
-
                     {/* MY ORDERS */}
 
                     <Link
@@ -302,7 +272,6 @@ function Header() {
                     >
                       MY ORDERS
                     </Link>
-
 
                     {/* CART */}
 
@@ -317,18 +286,13 @@ function Header() {
                       </span>
 
                       {cartCount > 0 && (
-
                         <span className="dropdown-cart-count">
                           {cartCount}
                         </span>
-
                       )}
-
                     </Link>
 
-
                     <div className="dropdown-divider" />
-
 
                     {/* LOGOUT */}
 
@@ -339,7 +303,6 @@ function Header() {
                     >
                       LOG OUT
                     </button>
-
                   </>
 
                 ) : (
@@ -349,9 +312,7 @@ function Header() {
                   ============================== */
 
                   <>
-
                     <div className="account-dropdown-user">
-
                       <span>
                         AL BRR PERFUMES
                       </span>
@@ -359,9 +320,7 @@ function Header() {
                       <strong>
                         WELCOME
                       </strong>
-
                     </div>
-
 
                     {/* LOGIN */}
 
@@ -374,7 +333,6 @@ function Header() {
                       SIGN IN
                     </Link>
 
-
                     {/* REGISTER */}
 
                     <Link
@@ -385,7 +343,6 @@ function Header() {
                     >
                       CREATE ACCOUNT
                     </Link>
-
 
                     {/* CART */}
 
@@ -400,27 +357,21 @@ function Header() {
                       </span>
 
                       {cartCount > 0 && (
-
                         <span className="dropdown-cart-count">
                           {cartCount}
                         </span>
-
                       )}
-
                     </Link>
-
                   </>
 
                 )}
 
               </div>
-
             )}
 
           </div>
 
         </nav>
-
 
         {/* =====================================
             ORDER NOW
@@ -438,7 +389,6 @@ function Header() {
         </Link>
 
       </div>
-
     </header>
   )
 }

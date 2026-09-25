@@ -20,7 +20,7 @@ const noirProducts = [
     price: '₹599',
   },
   {
-    name: 'Alfa-X',
+    name: 'Alfa-Men',
     gender: 'MEN',
     inspired: 'INSPIRED BY · DARK ELEGANCE',
     description:
@@ -122,47 +122,9 @@ function Home() {
 
         <section className="hero-section">
 
-          {/* REAL SMOKE VIDEO */}
+          
 
-          <div
-            className="hero-smoke-video-wrapper"
-            aria-hidden="true"
-          >
-            <video
-              className="hero-smoke-video"
-              autoPlay
-              muted
-              loop
-              playsInline
-              preload="auto"
-            >
-              <source
-                src="/videos/hero-smoke.mp4"
-                type="video/mp4"
-              />
-            </video>
-          </div>
-
-          {/* SECOND COPY FOR MORE DEPTH */}
-
-          <div
-            className="hero-smoke-video-wrapper hero-smoke-secondary"
-            aria-hidden="true"
-          >
-            <video
-              className="hero-smoke-video"
-              autoPlay
-              muted
-              loop
-              playsInline
-              preload="auto"
-            >
-              <source
-                src="/videos/hero-smoke.mp4"
-                type="video/mp4"
-              />
-            </video>
-          </div>
+          
 
           {/* DARK OVERLAY */}
 

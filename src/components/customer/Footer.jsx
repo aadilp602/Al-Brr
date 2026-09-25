@@ -5,14 +5,30 @@ function Footer() {
     <footer className="site-footer">
       <div className="footer-inner">
 
-        <Link to="/" className="footer-brand">
-          <span className="footer-brand-mark">AB</span>
+        {/* =====================================
+            FOOTER BRAND
+        ====================================== */}
 
-          <span>
-            <strong>AL BRR</strong>
-            <small>PERFUMES</small>
+        <Link
+          to="/"
+          className="footer-brand footer-logo-brand"
+          aria-label="Al Brr Perfumes Home"
+        >
+          <img
+            src="/images/al-brr-logo.png"
+            alt="Al Brr Perfumes"
+            className="footer-brand-logo"
+          />
+
+          <span className="footer-brand-name">
+            AL BRR
           </span>
         </Link>
+
+
+        {/* =====================================
+            FOOTER RIGHT
+        ====================================== */}
 
         <div className="footer-right">
           <p>

@@ -2,10 +2,6 @@
 
 @import "tailwindcss";
 
-/* =========================================================
-   VARIABLES
-========================================================= */
-
 :root {
   --black: #080706;
   --black-soft: #0d0b09;
@@ -25,10 +21,6 @@
 
   --border-gold: rgba(199, 165, 90, 0.25);
 }
-
-/* =========================================================
-   RESET
-========================================================= */
 
 * {
   box-sizing: border-box;
@@ -54,10 +46,6 @@ button {
   font-family: inherit;
 }
 
-/* =========================================================
-   MAIN SITE
-========================================================= */
-
 .luxury-site {
   min-height: 100vh;
   overflow: hidden;
@@ -75,10 +63,6 @@ button {
     ),
     var(--black);
 }
-
-/* =========================================================
-   HEADER
-========================================================= */
 
 .site-header {
   position: absolute;
@@ -114,8 +98,6 @@ button {
 
   gap: 40px;
 }
-
-/* LOGO */
 
 .brand {
   display: flex;
@@ -175,8 +157,6 @@ button {
   letter-spacing: 4px;
 }
 
-/* NAVIGATION */
-
 .main-nav {
   display: flex;
   align-items: center;
@@ -223,8 +203,6 @@ button {
   width: 100%;
 }
 
-/* ORDER BUTTON */
-
 .header-order-button {
   display: inline-flex;
   align-items: center;
@@ -254,10 +232,6 @@ button {
 
   transform: translateY(-2px);
 }
-
-/* =========================================================
-   HERO
-========================================================= */
 
 .hero-section {
   position: relative;
@@ -383,10 +357,6 @@ button {
   gap: 12px;
 }
 
-/* =========================================================
-   BUTTONS
-========================================================= */
-
 .gold-button {
   display: inline-flex;
   align-items: center;
@@ -449,10 +419,6 @@ button {
   transform: translateY(-2px);
 }
 
-/* =========================================================
-   MARQUEE
-========================================================= */
-
 .marquee-section {
   overflow: hidden;
 
@@ -499,10 +465,6 @@ button {
     transform: translateX(-35%);
   }
 }
-
-/* =========================================================
-   COLLECTION
-========================================================= */
 
 .collection-section {
   position: relative;
@@ -600,10 +562,6 @@ button {
   text-align: right;
 }
 
-/* =========================================================
-   PRODUCTS
-========================================================= */
-
 .products-grid {
   position: relative;
   z-index: 1;
@@ -636,8 +594,6 @@ button {
 
   border-color: rgba(199, 165, 90, 0.55);
 }
-
-/* PRODUCT IMAGE */
 
 .product-image-box {
   position: relative;
@@ -750,8 +706,6 @@ button {
   letter-spacing: 2px;
 }
 
-/* PRODUCT CONTENT */
-
 .product-card-content {
   min-height: 250px;
 
@@ -827,10 +781,6 @@ button {
   font-size: 7px;
 }
 
-/* =========================================================
-   CENTER PRODUCT
-========================================================= */
-
 .center-product-image {
   position: relative;
   z-index: 1;
@@ -898,10 +848,6 @@ button {
     0 -11px 0 0 rgba(199, 165, 90, 0.45);
 }
 
-/* =========================================================
-   ROUGE
-========================================================= */
-
 .rouge-section {
   background:
     radial-gradient(
@@ -945,10 +891,6 @@ button {
 .rouge-card .product-card-content h3 {
   color: #f0dfd7;
 }
-
-/* =========================================================
-   STORY
-========================================================= */
 
 .story-section {
   position: relative;
@@ -1027,10 +969,6 @@ button {
   line-height: 2;
 }
 
-/* =========================================================
-   FINAL CTA
-========================================================= */
-
 .final-cta {
   width: min(1320px, calc(100% - 70px));
 
@@ -1076,10 +1014,6 @@ button {
 
   padding: 16px 24px;
 }
-
-/* =========================================================
-   FOOTER
-========================================================= */
 
 .site-footer {
   border-top: 1px solid rgba(199, 165, 90, 0.12);
@@ -1178,10 +1112,6 @@ button {
   color: var(--gold);
 }
 
-/* =========================================================
-   TABLET
-========================================================= */
-
 @media (max-width: 900px) {
 
   .header-inner {
@@ -1242,10 +1172,6 @@ button {
     flex-direction: column;
   }
 }
-
-/* =========================================================
-   MOBILE
-========================================================= */
 
 @media (max-width: 620px) {
 
@@ -1366,10 +1292,6 @@ button {
     gap: 8px;
   }
 }
-
-/* =========================================
-   PRODUCTS PAGE
-========================================= */
 
 .products-page-hero {
   position: relative;
@@ -1587,11 +1509,6 @@ button {
   font-style: italic;
 }
 
-
-/* =========================================
-   PRODUCTS RESPONSIVE
-========================================= */
-
 @media (max-width: 900px) {
 
   .products-page-hero-inner,
@@ -1655,10 +1572,6 @@ button {
   }
 
 }
-
-/* =========================================
-   PRODUCT DETAILS
-========================================= */
 
 .product-details-section {
   position: relative;
@@ -1937,11 +1850,6 @@ button {
   line-height: 2;
 }
 
-
-/* =========================================
-   PRODUCT NOT FOUND
-========================================= */
-
 .product-not-found {
   min-height: 750px;
   padding: 180px 30px 100px;
@@ -1964,11 +1872,6 @@ button {
 .product-not-found h1 em {
   color: var(--gold);
 }
-
-
-/* =========================================
-   CART PAGE
-========================================= */
 
 .cart-page-hero {
   min-height: 500px;
@@ -2254,11 +2157,6 @@ button {
   font-style: italic;
 }
 
-
-/* =========================================
-   CART + PRODUCT MOBILE
-========================================= */
-
 @media (max-width: 900px) {
 
   .product-details-inner {
@@ -2379,10 +2277,6 @@ button {
   }
 
 }
-
-/* =========================================
-   CHECKOUT
-========================================= */
 
 .checkout-hero {
   min-height: 500px;
@@ -2672,11 +2566,6 @@ button {
   color: var(--gold);
 }
 
-
-/* =========================================
-   CHECKOUT EMPTY
-========================================= */
-
 .checkout-empty {
   min-height: 750px;
   padding: 170px 30px 100px;
@@ -2706,11 +2595,6 @@ button {
   color: #817970;
   font-size: 10px;
 }
-
-
-/* =========================================
-   ORDER SUCCESS
-========================================= */
 
 .order-success {
   min-height: 760px;
@@ -2790,11 +2674,6 @@ button {
   display: flex;
   gap: 10px;
 }
-
-
-/* =========================================
-   ORDER DETAILS
-========================================= */
 
 .order-details-hero {
   min-height: 500px;
@@ -3033,11 +2912,6 @@ button {
   color: var(--gold-light);
 }
 
-
-/* =========================================
-   CHECKOUT / ORDER RESPONSIVE
-========================================= */
-
 @media (max-width: 900px) {
 
   .checkout-layout,
@@ -3124,10 +2998,6 @@ button {
 
 }
 
-/* =========================================
-   CART PAGE
-========================================= */
-
 .cart-hero {
   padding: 150px 24px 100px;
   background: #080808;
@@ -3212,8 +3082,6 @@ button {
   margin-bottom: 30px;
 }
 
-/* LAYOUT */
-
 .cart-layout {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 350px;
@@ -3251,8 +3119,6 @@ button {
 .cart-clear-button:hover {
   color: #c9a45c;
 }
-
-/* PRODUCT */
 
 .cart-product {
   display: grid;
@@ -3377,8 +3243,6 @@ button {
   color: #c9a45c;
 }
 
-/* SUMMARY */
-
 .cart-summary {
   position: sticky;
   top: 100px;
@@ -3453,8 +3317,6 @@ button {
   color: #c9a45c;
 }
 
-/* MOBILE */
-
 @media (max-width: 900px) {
 
   .cart-layout {
@@ -3506,10 +3368,6 @@ button {
   }
 
 }
-
-/* =========================================
-   AUTH PAGES
-========================================= */
 
 .auth-page {
   min-height: 80vh;
@@ -3635,10 +3493,6 @@ button {
 
 }
 
-/* =========================================
-   ACCOUNT PAGE
-========================================= */
-
 .account-hero {
   padding: 145px 24px 90px;
   background: #080808;
@@ -3754,8 +3608,6 @@ button {
   color: #111;
 }
 
-/* ORDERS */
-
 .account-orders {
   min-width: 0;
 }
@@ -3780,8 +3632,6 @@ button {
   font-family: 'Cormorant Garamond', serif;
   font-size: 20px;
 }
-
-/* NO ORDERS */
 
 .account-no-orders {
   min-height: 350px;
@@ -3818,8 +3668,6 @@ button {
   color: rgba(244, 238, 228, .45);
   font-size: 12px;
 }
-
-/* ORDER LIST */
 
 .account-order {
   display: grid;
@@ -3915,8 +3763,6 @@ button {
   gap: 12px;
 }
 
-/* MOBILE */
-
 @media (max-width: 900px) {
 
   .account-layout {
@@ -3967,10 +3813,6 @@ button {
   }
 
 }
-
-/* =========================================
-   ACCOUNT DROPDOWN
-========================================= */
 
 .account-dropdown {
   position: relative;
@@ -4101,8 +3943,6 @@ button {
   background: rgba(170, 60, 50, 0.1);
 }
 
-/* ACCOUNT ko navbar ke baaki links jaisa EXACT same rakho */
-
 .main-nav .account-dropdown-button {
   appearance: none;
   -webkit-appearance: none;
@@ -4140,10 +3980,6 @@ button {
   line-height: 1;
 }
 
-/* =========================================
-   ACTIVE NAVIGATION
-========================================= */
-
 .main-nav a,
 .main-nav .account-dropdown-button {
   position: relative;
@@ -4172,10 +4008,6 @@ button {
 .main-nav .account-dropdown-button::after {
   transition: all 0.25s ease;
 }
-
-/* =========================================
-   NOIR / ROUGE / STORY NAV BUTTONS
-========================================= */
 
 .main-nav .nav-section-link {
   appearance: none;
@@ -4227,8 +4059,6 @@ button {
     0 0 8px rgba(224, 187, 104, 0.35);
 }
 
-/* NOIR / ROUGE / STORY EXACT SAME AS NAV LINKS */
-
 .main-nav .nav-section-link {
   appearance: none;
   -webkit-appearance: none;
@@ -4249,10 +4079,6 @@ button {
   cursor: pointer;
   position: relative;
 }
-
-/* =========================================
-   CONTACT PAGE
-========================================= */
 
 .contact-hero {
   min-height: 430px;
@@ -4295,11 +4121,6 @@ button {
   line-height: 1.9;
 }
 
-
-/* =========================================
-   CONTACT CONTENT
-========================================= */
-
 .contact-section {
   padding: 110px 7%;
   background: #0b0b0b;
@@ -4315,9 +4136,6 @@ button {
   gap: 90px;
   align-items: start;
 }
-
-
-/* LEFT */
 
 .contact-info h2,
 .contact-form-heading h2 {
@@ -4345,9 +4163,6 @@ button {
   font-size: 13px;
   line-height: 1.9;
 }
-
-
-/* CONTACT DETAILS */
 
 .contact-details {
   border-top: 1px solid rgba(201, 163, 92, 0.18);
@@ -4399,11 +4214,6 @@ button {
   color: rgba(233, 222, 203, 0.45);
   font-size: 11px;
 }
-
-
-/* =========================================
-   FORM
-========================================= */
 
 .contact-form-wrapper {
   padding: 48px;
@@ -4503,9 +4313,6 @@ button {
   font-size: 10px;
 }
 
-
-/* SUCCESS */
-
 .contact-success {
   display: flex;
   gap: 15px;
@@ -4542,19 +4349,11 @@ button {
   line-height: 1.6;
 }
 
-
-/* BUTTON */
-
 .contact-submit {
   margin-top: 35px;
   border: none;
   cursor: pointer;
 }
-
-
-/* =========================================
-   BOTTOM
-========================================= */
 
 .contact-bottom {
   min-height: 170px;
@@ -4588,11 +4387,6 @@ button {
 .contact-bottom p em {
   color: #c9a35c;
 }
-
-
-/* =========================================
-   CONTACT RESPONSIVE
-========================================= */
 
 @media (max-width: 900px) {
   .contact-layout {
@@ -4632,10 +4426,6 @@ button {
     text-align: center;
   }
 }
-
-/* =========================================
-   ROUGE BOTTOM MOVING MARQUEE
-========================================= */
 
 .rouge-marquee-section {
   width: 100%;
@@ -4688,10 +4478,6 @@ button {
   }
 }
 
-/* =========================================
-   NAVBAR PROFILE ICON
-========================================= */
-
 .account-profile-button {
   width: 38px;
   height: 38px;
@@ -4735,9 +4521,6 @@ button {
   transform: translateY(-1px);
 }
 
-
-/* LOGGED IN USER INITIAL */
-
 .profile-initial {
   font-family: 'Cormorant Garamond', serif;
   font-size: 18px;
@@ -4746,9 +4529,6 @@ button {
 
   color: #d4b36c;
 }
-
-
-/* CURRENT PAGE ACTIVE */
 
 .account-profile-button.profile-active {
   color: #080808;
@@ -4763,22 +4543,12 @@ button {
   color: #080808;
 }
 
-/* =========================================================
-   AL BRR ADMIN PANEL
-   Isolated admin styling
-========================================================= */
-
 .admin-shell {
   min-height: 100vh;
   background: #f4f1ea;
   color: #171512;
   font-family: 'Montserrat', sans-serif;
 }
-
-
-/* =========================================================
-   SIDEBAR
-========================================================= */
 
 .admin-sidebar {
   position: fixed;
@@ -4808,11 +4578,6 @@ button {
   border-right: 1px solid rgba(199, 165, 90, 0.18);
 }
 
-
-/* =========================================================
-   BRAND
-========================================================= */
-
 .admin-brand {
   min-height: 96px;
 
@@ -4825,7 +4590,6 @@ button {
 
   border-bottom: 1px solid rgba(199, 165, 90, 0.16);
 }
-
 
 .admin-brand-mark {
   width: 38px;
@@ -4842,7 +4606,6 @@ button {
   transform: rotate(45deg);
 }
 
-
 .admin-brand-mark span {
   color: #d9bc76;
 
@@ -4853,14 +4616,12 @@ button {
   transform: rotate(-45deg);
 }
 
-
 .admin-brand-copy {
   display: flex;
   flex-direction: column;
 
   line-height: 1;
 }
-
 
 .admin-brand-copy strong {
   color: #dfc37b !important;
@@ -4873,7 +4634,6 @@ button {
   letter-spacing: 4px;
 }
 
-
 .admin-brand-copy small {
   margin-top: 7px;
 
@@ -4883,11 +4643,6 @@ button {
 
   letter-spacing: 4px;
 }
-
-
-/* =========================================================
-   MENU
-========================================================= */
 
 .admin-menu-label {
   padding: 25px 27px 10px;
@@ -4900,11 +4655,9 @@ button {
   letter-spacing: 3px;
 }
 
-
 .admin-navigation {
   padding: 0 14px 30px;
 }
-
 
 .admin-nav-link {
   position: relative;
@@ -4944,11 +4697,9 @@ button {
     transform 0.25s ease;
 }
 
-
 .admin-nav-link::after {
   display: none !important;
 }
-
 
 .admin-nav-link:hover {
   color: #e5d4ad !important;
@@ -4959,7 +4710,6 @@ button {
 
   transform: translateX(2px);
 }
-
 
 .admin-nav-icon {
   width: 25px;
@@ -4980,13 +4730,9 @@ button {
   transition: color 0.25s ease;
 }
 
-
 .admin-nav-name {
   color: inherit !important;
 }
-
-
-/* ACTIVE */
 
 .admin-nav-link-active {
   color: #f0dfb9 !important;
@@ -5000,7 +4746,6 @@ button {
 
   border-color: rgba(199, 165, 90, 0.22);
 }
-
 
 .admin-nav-link-active::before {
   content: '';
@@ -5019,15 +4764,9 @@ button {
     0 0 12px rgba(199, 165, 90, 0.5);
 }
 
-
 .admin-nav-link-active .admin-nav-icon {
   color: #d9bc76 !important;
 }
-
-
-/* =========================================================
-   SIDEBAR FOOTER
-========================================================= */
 
 .admin-sidebar-footer {
   margin-top: auto;
@@ -5036,7 +4775,6 @@ button {
 
   border-top: 1px solid rgba(199, 165, 90, 0.12);
 }
-
 
 .admin-sidebar-footer span {
   display: block;
@@ -5050,7 +4788,6 @@ button {
   letter-spacing: 3px;
 }
 
-
 .admin-sidebar-footer p {
   margin: 6px 0 0;
 
@@ -5060,11 +4797,6 @@ button {
 
   letter-spacing: 1px;
 }
-
-
-/* =========================================================
-   MAIN
-========================================================= */
 
 .admin-main {
   min-height: 100vh;
@@ -5079,11 +4811,6 @@ button {
     ),
     #f6f3ed;
 }
-
-
-/* =========================================================
-   TOPBAR
-========================================================= */
 
 .admin-topbar {
   position: sticky;
@@ -5109,12 +4836,10 @@ button {
   backdrop-filter: blur(14px);
 }
 
-
 .admin-topbar-left {
   display: flex;
   flex-direction: column;
 }
-
 
 .admin-topbar-eyebrow {
   margin-bottom: 5px;
@@ -5125,7 +4850,6 @@ button {
 
   letter-spacing: 3px;
 }
-
 
 .admin-topbar h2 {
   margin: 0;
@@ -5140,16 +4864,12 @@ button {
   letter-spacing: 0.5px;
 }
 
-
 .admin-topbar-right {
   display: flex;
   align-items: center;
 
   gap: 18px;
 }
-
-
-/* ONLINE */
 
 .admin-status {
   display: flex;
@@ -5168,7 +4888,6 @@ button {
   letter-spacing: 2px;
 }
 
-
 .admin-status-dot {
   width: 6px;
   height: 6px;
@@ -5181,9 +4900,6 @@ button {
     0 0 8px rgba(77, 124, 87, 0.45);
 }
 
-
-/* USER */
-
 .admin-user-info {
   display: flex;
   flex-direction: column;
@@ -5193,14 +4909,12 @@ button {
   line-height: 1.2;
 }
 
-
 .admin-user-info span {
   color: #29251e !important;
 
   font-size: 10px;
   font-weight: 600;
 }
-
 
 .admin-user-info small {
   margin-top: 4px;
@@ -5211,7 +4925,6 @@ button {
 
   letter-spacing: 1px;
 }
-
 
 .admin-avatar {
   width: 42px;
@@ -5234,40 +4947,23 @@ button {
   font-size: 17px;
 }
 
-
-/* =========================================================
-   PAGE
-========================================================= */
-
 .admin-page-content {
   min-height: calc(100vh - 96px);
 
   padding: 38px;
 }
 
-
-/* =========================================================
-   SCROLLBAR
-========================================================= */
-
 .admin-sidebar::-webkit-scrollbar {
   width: 4px;
 }
-
 
 .admin-sidebar::-webkit-scrollbar-track {
   background: #080807;
 }
 
-
 .admin-sidebar::-webkit-scrollbar-thumb {
   background: #4b402b;
 }
-
-
-/* =========================================================
-   RESPONSIVE
-========================================================= */
 
 @media (max-width: 1050px) {
 
@@ -5287,7 +4983,6 @@ button {
     padding: 28px;
   }
 }
-
 
 @media (max-width: 760px) {
 
@@ -5351,10 +5046,6 @@ button {
   }
 }
 
-/* =========================================================
-   AL BRR ADMIN DASHBOARD
-========================================================= */
-
 .admin-dashboard {
   width: 100%;
   max-width: 1800px;
@@ -5404,9 +5095,6 @@ button {
   letter-spacing: 1.2px;
 }
 
-
-/* LAYOUT */
-
 .admin-dashboard-top {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 330px;
@@ -5423,11 +5111,6 @@ button {
   flex-direction: column;
   gap: 22px;
 }
-
-
-/* =========================================================
-   STATS
-========================================================= */
 
 .admin-stats-grid {
   display: grid;
@@ -5518,11 +5201,6 @@ button {
   font-size: 7px;
 }
 
-
-/* =========================================================
-   CARDS
-========================================================= */
-
 .admin-dashboard-card {
   border: 1px solid #e1d9cc;
   background: rgba(255, 255, 255, 0.9);
@@ -5570,11 +5248,6 @@ button {
   font-family: inherit;
   font-size: 8px;
 }
-
-
-/* =========================================================
-   CHART ROW
-========================================================= */
 
 .admin-dashboard-chart-row {
   display: grid;
@@ -5662,11 +5335,6 @@ button {
   color: #968e83 !important;
   font-size: 7px;
 }
-
-
-/* =========================================================
-   DONUT
-========================================================= */
 
 .admin-donut-wrapper {
   padding: 27px 22px;
@@ -5770,11 +5438,6 @@ button {
   background: #7b383a;
 }
 
-
-/* =========================================================
-   BOTTOM
-========================================================= */
-
 .admin-dashboard-bottom-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -5855,9 +5518,6 @@ button {
   text-align: right;
 }
 
-
-/* REVENUE */
-
 .admin-category-revenue {
   min-height: 280px;
   display: flex;
@@ -5912,11 +5572,6 @@ button {
 .category-3 {
   background: #d7cec0;
 }
-
-
-/* =========================================================
-   RECENT ORDERS
-========================================================= */
 
 .admin-recent-orders {
   padding: 0 18px;
@@ -5986,9 +5641,6 @@ button {
   font-size: 7px;
 }
 
-
-/* BADGES */
-
 .admin-status-badge {
   display: inline-flex;
   align-items: center;
@@ -6017,11 +5669,6 @@ button {
   background: #f3e5e5;
   color: #8b4143 !important;
 }
-
-
-/* =========================================================
-   QUICK ACTIONS
-========================================================= */
 
 .admin-quick-card {
   background:
@@ -6066,11 +5713,6 @@ button {
   font-family: 'Cormorant Garamond', serif;
   font-size: 20px;
 }
-
-
-/* =========================================================
-   BRAND CARD
-========================================================= */
 
 .admin-dashboard-brand-card {
   position: relative;
@@ -6128,11 +5770,6 @@ button {
   font-family: 'Cormorant Garamond', serif;
   font-size: 85px;
 }
-
-
-/* =========================================================
-   RESPONSIVE
-========================================================= */
 
 @media (max-width: 1350px) {
   .admin-dashboard-top {
@@ -6192,17 +5829,10 @@ button {
   }
 }
 
-/* =========================================================
-   ADMIN DASHBOARD — LARGER DISPLAY + FONTS
-   Paste at END of index.css
-========================================================= */
-
-/* Main content thoda spacious */
 .admin-page-content {
   padding: 42px !important;
 }
 
-/* Page heading */
 .admin-dashboard-heading {
   margin-bottom: 32px;
 }
@@ -6224,11 +5854,6 @@ button {
   padding: 12px 16px;
   font-size: 10px !important;
 }
-
-
-/* =========================================================
-   STAT CARDS
-========================================================= */
 
 .admin-stats-grid {
   gap: 18px;
@@ -6268,11 +5893,6 @@ button {
   font-size: 9px !important;
 }
 
-
-/* =========================================================
-   ALL DASHBOARD CARDS
-========================================================= */
-
 .admin-card-header {
   min-height: 84px;
   padding: 20px 23px;
@@ -6296,11 +5916,6 @@ button {
   font-size: 10px !important;
 }
 
-
-/* =========================================================
-   SALES CHART
-========================================================= */
-
 .admin-sales-chart {
   height: 370px;
   grid-template-columns: 48px 1fr;
@@ -6319,11 +5934,6 @@ button {
 .admin-chart-x-labels span {
   font-size: 9px !important;
 }
-
-
-/* =========================================================
-   DONUT / ORDER STATUS
-========================================================= */
 
 .admin-donut-wrapper {
   padding: 32px 25px;
@@ -6369,11 +5979,6 @@ button {
   font-size: 10px !important;
 }
 
-
-/* =========================================================
-   RECENT ORDERS
-========================================================= */
-
 .admin-recent-orders {
   padding: 0 21px;
 }
@@ -6407,11 +6012,6 @@ button {
   padding: 5px 9px;
   font-size: 8px !important;
 }
-
-
-/* =========================================================
-   TOP SELLING PRODUCTS
-========================================================= */
 
 .admin-top-products {
   padding: 10px 22px 18px;
@@ -6450,11 +6050,6 @@ button {
   margin-top: 10px;
 }
 
-
-/* =========================================================
-   REVENUE BY COLLECTION
-========================================================= */
-
 .admin-category-revenue {
   min-height: 315px;
   gap: 42px;
@@ -6474,11 +6069,6 @@ button {
   font-size: 10px !important;
 }
 
-
-/* =========================================================
-   QUICK ACTIONS
-========================================================= */
-
 .admin-quick-grid {
   gap: 12px;
   padding: 18px;
@@ -6493,11 +6083,6 @@ button {
 .admin-quick-grid span {
   font-size: 25px !important;
 }
-
-
-/* =========================================================
-   BRAND CARD
-========================================================= */
 
 .admin-dashboard-brand-card {
   min-height: 215px;
@@ -6522,11 +6107,6 @@ button {
   font-size: 100px !important;
 }
 
-
-/* =========================================================
-   SIDEBAR — ALSO SLIGHTLY LARGER
-========================================================= */
-
 .admin-nav-link {
   min-height: 50px !important;
   font-size: 12px !important;
@@ -6547,11 +6127,6 @@ button {
 .admin-brand-copy small {
   font-size: 8px !important;
 }
-
-
-/* =========================================================
-   TOPBAR
-========================================================= */
 
 .admin-topbar h2 {
   font-size: 31px !important;
@@ -6575,11 +6150,6 @@ button {
   font-size: 19px !important;
 }
 
-
-/* =========================================================
-   LAPTOP
-========================================================= */
-
 @media (max-width: 1200px) {
   .admin-page-content {
     padding: 30px !important;
@@ -6593,11 +6163,6 @@ button {
     font-size: 28px !important;
   }
 }
-
-
-/* =========================================================
-   MOBILE
-========================================================= */
 
 @media (max-width: 760px) {
   .admin-page-content {
@@ -6621,10 +6186,6 @@ button {
   }
 }
 
-/* =========================================================
-   FIX — ADMIN STAT CARD LARGE VALUES
-========================================================= */
-
 .admin-stat-card {
   min-width: 0;
 }
@@ -6641,13 +6202,11 @@ button {
   white-space: nowrap;
 }
 
-/* Revenue needs a little more room */
 .admin-stat-card:nth-child(2) .admin-stat-copy > strong {
   font-size: clamp(21px, 1.5vw, 27px) !important;
   letter-spacing: -0.8px;
 }
 
-/* Give value area more usable space */
 .admin-stat-card {
   padding-left: 18px !important;
   padding-right: 18px !important;
@@ -6658,7 +6217,6 @@ button {
   height: 46px;
 }
 
-/* Larger screens */
 @media (min-width: 1500px) {
   .admin-stat-copy > strong {
     font-size: 30px !important;
@@ -6669,16 +6227,11 @@ button {
   }
 }
 
-/* Smaller admin widths */
 @media (max-width: 1150px) {
   .admin-stat-card:nth-child(2) .admin-stat-copy > strong {
     font-size: 24px !important;
   }
 }
-
-/* =========================================================
-   FINAL HERO CONTENT POSITION
-========================================================= */
 
 .luxury-site .hero-section {
   position: relative;
@@ -6690,7 +6243,6 @@ button {
   overflow: hidden;
 }
 
-/* Main hero content */
 .luxury-site .hero-section .hero-content {
   flex: 0 0 100% !important;
   width: 100% !important;
@@ -6707,7 +6259,6 @@ button {
   text-align: left !important;
 }
 
-/* Eyebrow */
 .luxury-site .hero-section .eyebrow {
   width: auto !important;
   max-width: 650px !important;
@@ -6718,7 +6269,6 @@ button {
   text-align: left !important;
 }
 
-/* Main heading */
 .luxury-site .hero-section .hero-content h1 {
   width: auto !important;
   max-width: 760px !important;
@@ -6731,12 +6281,10 @@ button {
   transform: none !important;
 }
 
-/* Gold italic line */
 .luxury-site .hero-section .hero-content h1 em {
   display: inline-block;
 }
 
-/* Description */
 .luxury-site .hero-section .hero-description {
   width: 100% !important;
   max-width: 570px !important;
@@ -6747,7 +6295,6 @@ button {
   text-align: left !important;
 }
 
-/* Buttons */
 .luxury-site .hero-section .hero-buttons {
   width: auto !important;
 
@@ -6761,9 +6308,6 @@ button {
   text-align: left !important;
 }
 
-
-/* ================= TABLET ================= */
-
 @media (max-width: 900px) {
 
   .luxury-site .hero-section .hero-content {
@@ -6776,9 +6320,6 @@ button {
   }
 
 }
-
-
-/* ================= MOBILE ================= */
 
 @media (max-width: 620px) {
 
@@ -6797,10 +6338,6 @@ button {
   }
 
 }
-
-/* =========================================================
-   ADMIN PRODUCTS PAGE
-========================================================= */
 
 .admin-products-page {
   width: 100%;
@@ -6838,9 +6375,6 @@ button {
   line-height: 1.6;
 }
 
-
-/* ADD PRODUCT BUTTON */
-
 .admin-add-product-btn {
   min-height: 48px;
   padding: 0 22px;
@@ -6874,11 +6408,6 @@ button {
   border-color: #a98643;
   color: #fff !important;
 }
-
-
-/* =========================================================
-   SUMMARY CARDS
-========================================================= */
 
 .admin-product-stats {
   display: grid;
@@ -6949,19 +6478,11 @@ button {
   font-size: 10px;
 }
 
-
-/* =========================================================
-   PRODUCTS PANEL
-========================================================= */
-
 .admin-products-panel {
   background: #fff;
   border: 1px solid #e7e0d5;
   box-shadow: 0 10px 35px rgba(30, 24, 15, 0.035);
 }
-
-
-/* TOOLBAR */
 
 .admin-products-toolbar {
   padding: 20px 22px;
@@ -7030,11 +6551,6 @@ button {
   cursor: pointer;
 }
 
-
-/* =========================================================
-   PRODUCTS TABLE
-========================================================= */
-
 .admin-products-table-wrap {
   width: 100%;
   overflow-x: auto;
@@ -7085,9 +6601,6 @@ button {
 .admin-products-table tbody tr:last-child td {
   border-bottom: 0;
 }
-
-
-/* PRODUCT */
 
 .admin-product-info {
   min-width: 180px;
@@ -7156,11 +6669,6 @@ button {
   font-size: 12px;
 }
 
-
-/* =========================================================
-   STOCK BADGES
-========================================================= */
-
 .admin-product-badge {
   display: inline-flex;
   align-items: center;
@@ -7188,9 +6696,6 @@ button {
   background: #f8e9e8;
   color: #974943;
 }
-
-
-/* STATUS */
 
 .admin-product-status {
   display: inline-flex;
@@ -7224,11 +6729,6 @@ button {
 .admin-product-status.inactive {
   color: #98544e;
 }
-
-
-/* =========================================================
-   ACTION BUTTONS
-========================================================= */
 
 .admin-table-action {
   text-align: right !important;
@@ -7272,11 +6772,6 @@ button {
   background: #fff5f4;
   color: #a54c45;
 }
-
-
-/* =========================================================
-   TABLE FOOTER
-========================================================= */
 
 .admin-products-footer {
   min-height: 65px;
@@ -7322,11 +6817,6 @@ button {
   border-color: #181611;
   color: #d0ac65;
 }
-
-
-/* =========================================================
-   PRODUCTS RESPONSIVE
-========================================================= */
 
 @media (max-width: 1200px) {
 
@@ -7383,19 +6873,10 @@ button {
 
 }
 
-/* =========================================================
-   AL BRR ADMIN - ADD PRODUCT PAGE
-========================================================= */
-
 .admin-add-product-page {
   width: 100%;
   padding-bottom: 50px;
 }
-
-
-/* =========================================================
-   PAGE HEADER
-========================================================= */
 
 .admin-add-product-header {
   display: flex;
@@ -7441,11 +6922,6 @@ button {
   gap: 12px;
 }
 
-
-/* =========================================================
-   BUTTONS
-========================================================= */
-
 .admin-add-cancel-btn,
 .admin-add-save-btn {
   min-height: 46px;
@@ -7488,11 +6964,6 @@ button {
   transform: translateY(-1px);
 }
 
-
-/* =========================================================
-   MAIN FORM LAYOUT
-========================================================= */
-
 .admin-add-product-layout {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 350px;
@@ -7511,11 +6982,6 @@ button {
   flex-direction: column;
   gap: 24px;
 }
-
-
-/* =========================================================
-   SECTION CARD
-========================================================= */
 
 .admin-add-section {
   position: relative;
@@ -7542,11 +7008,6 @@ button {
   );
   opacity: 0.8;
 }
-
-
-/* =========================================================
-   SECTION HEADINGS
-========================================================= */
 
 .admin-add-section-heading {
   display: flex;
@@ -7598,11 +7059,6 @@ button {
   border-bottom: 1px solid #eee9e1;
 }
 
-
-/* =========================================================
-   FORM GRID
-========================================================= */
-
 .admin-add-fields {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -7620,11 +7076,6 @@ button {
 .admin-add-field.full {
   grid-column: 1 / -1;
 }
-
-
-/* =========================================================
-   LABELS
-========================================================= */
 
 .admin-add-field label {
   display: flex;
@@ -7651,11 +7102,6 @@ button {
   font-weight: 600;
   letter-spacing: 0.07em;
 }
-
-
-/* =========================================================
-   INPUTS / SELECT / TEXTAREA
-========================================================= */
 
 .admin-add-field input,
 .admin-add-field select,
@@ -7713,11 +7159,6 @@ button {
   line-height: 1.5;
 }
 
-
-/* =========================================================
-   PRICE INPUT
-========================================================= */
-
 .admin-price-input {
   display: flex;
   align-items: center;
@@ -7770,11 +7211,6 @@ button {
   box-shadow: none !important;
 }
 
-
-/* =========================================================
-   VALIDATION ERRORS
-========================================================= */
-
 .admin-field-error {
   display: block;
   margin-top: 7px;
@@ -7795,11 +7231,6 @@ button {
   font-family: "Montserrat", sans-serif;
   font-size: 11px;
 }
-
-
-/* =========================================================
-   PRODUCT IMAGE UPLOAD
-========================================================= */
 
 .admin-product-upload {
   display: flex;
@@ -7870,11 +7301,6 @@ button {
   font-size: 9px;
 }
 
-
-/* =========================================================
-   IMAGE PREVIEW
-========================================================= */
-
 .admin-image-preview {
   overflow: hidden;
   border: 1px solid #e0d9cd;
@@ -7922,11 +7348,6 @@ button {
   text-transform: uppercase;
   cursor: pointer;
 }
-
-
-/* =========================================================
-   PRODUCT STATUS SWITCHES
-========================================================= */
 
 .admin-product-switches {
   display: flex;
@@ -8013,11 +7434,6 @@ button {
   background: #d7ba75;
 }
 
-
-/* =========================================================
-   PRODUCT PREVIEW / SUMMARY
-========================================================= */
-
 .admin-product-summary {
   background:
     linear-gradient(
@@ -8077,11 +7493,6 @@ button {
   font-weight: 600;
 }
 
-
-/* =========================================================
-   SUMMARY IMAGE
-========================================================= */
-
 .admin-summary-image {
   width: 100%;
   height: 190px;
@@ -8098,11 +7509,6 @@ button {
   object-fit: contain;
 }
 
-
-/* =========================================================
-   BOTTOM ACTIONS
-========================================================= */
-
 .admin-add-bottom-actions {
   display: none;
   grid-column: 1 / -1;
@@ -8111,11 +7517,6 @@ button {
   gap: 12px;
   padding-top: 5px;
 }
-
-
-/* =========================================================
-   RESPONSIVE - LARGE TABLET
-========================================================= */
 
 @media (max-width: 1200px) {
   .admin-add-product-layout {
@@ -8130,11 +7531,6 @@ button {
     grid-column: 1 / -1;
   }
 }
-
-
-/* =========================================================
-   RESPONSIVE - TABLET
-========================================================= */
 
 @media (max-width: 950px) {
   .admin-add-product-layout {
@@ -8151,11 +7547,6 @@ button {
     grid-column: 1 / -1;
   }
 }
-
-
-/* =========================================================
-   RESPONSIVE - MOBILE
-========================================================= */
 
 @media (max-width: 700px) {
   .admin-add-product-header {
@@ -8209,11 +7600,6 @@ button {
   }
 }
 
-
-/* =========================================================
-   RESPONSIVE - SMALL MOBILE
-========================================================= */
-
 @media (max-width: 480px) {
   .admin-add-product-header h1 {
     font-size: 34px;
@@ -8243,19 +7629,10 @@ button {
   }
 }
 
-/* =========================================================
-   AL BRR ADMIN - CATEGORIES PAGE
-========================================================= */
-
 .admin-categories-page {
   width: 100%;
   padding-bottom: 50px;
 }
-
-
-/* =========================================================
-   HEADER
-========================================================= */
 
 .admin-categories-header {
   display: flex;
@@ -8306,11 +7683,6 @@ button {
   border-color: #29251f;
   transform: translateY(-1px);
 }
-
-
-/* =========================================================
-   CATEGORY STATS
-========================================================= */
 
 .admin-category-stats {
   display: grid;
@@ -8390,11 +7762,6 @@ button {
   white-space: nowrap;
 }
 
-
-/* =========================================================
-   MAIN PANEL
-========================================================= */
-
 .admin-categories-panel {
   overflow: hidden;
   border: 1px solid #e4ded4;
@@ -8402,11 +7769,6 @@ button {
   background: #ffffff;
   box-shadow: 0 8px 28px rgba(33, 29, 22, 0.035);
 }
-
-
-/* =========================================================
-   TOOLBAR
-========================================================= */
 
 .admin-categories-toolbar {
   display: flex;
@@ -8483,11 +7845,6 @@ button {
   box-shadow: 0 0 0 3px rgba(180, 148, 82, 0.09);
 }
 
-
-/* =========================================================
-   TABLE
-========================================================= */
-
 .admin-categories-table-wrap {
   width: 100%;
   overflow-x: auto;
@@ -8536,11 +7893,6 @@ button {
 .admin-categories-table tbody tr:last-child td {
   border-bottom: 0;
 }
-
-
-/* =========================================================
-   CATEGORY NAME
-========================================================= */
 
 .admin-category-name {
   display: flex;
@@ -8592,11 +7944,6 @@ button {
   text-transform: uppercase;
 }
 
-
-/* =========================================================
-   DESCRIPTION
-========================================================= */
-
 .admin-category-description {
   max-width: 390px;
   margin: 0;
@@ -8605,11 +7952,6 @@ button {
   font-size: 10px;
   line-height: 1.65;
 }
-
-
-/* =========================================================
-   PRODUCT COUNT
-========================================================= */
 
 .admin-category-product-count {
   display: inline-flex;
@@ -8626,11 +7968,6 @@ button {
   font-size: 10px;
   font-weight: 700;
 }
-
-
-/* =========================================================
-   STATUS
-========================================================= */
 
 .admin-category-status {
   display: inline-flex;
@@ -8683,11 +8020,6 @@ button {
   background: #ece9e4;
 }
 
-
-/* =========================================================
-   ACTION BUTTONS
-========================================================= */
-
 .admin-category-actions {
   display: flex;
   align-items: center;
@@ -8723,21 +8055,11 @@ button {
   color: #a4443d;
 }
 
-
-/* =========================================================
-   EMPTY STATE
-========================================================= */
-
 .admin-category-empty {
   padding: 55px 20px !important;
   color: #999186 !important;
   text-align: center;
 }
-
-
-/* =========================================================
-   TABLE FOOTER
-========================================================= */
 
 .admin-categories-footer {
   display: flex;
@@ -8759,11 +8081,6 @@ button {
   color: #544b3e;
 }
 
-
-/* =========================================================
-   MODAL OVERLAY
-========================================================= */
-
 .admin-category-modal-overlay {
   position: fixed;
   z-index: 9999;
@@ -8777,11 +8094,6 @@ button {
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
 }
-
-
-/* =========================================================
-   MODAL
-========================================================= */
 
 .admin-category-modal {
   position: relative;
@@ -8821,11 +8133,6 @@ button {
     transform: translateY(0) scale(1);
   }
 }
-
-
-/* =========================================================
-   MODAL HEADER
-========================================================= */
 
 .admin-category-modal-header {
   display: flex;
@@ -8879,11 +8186,6 @@ button {
   background: #faf7ef;
   color: #8d7139;
 }
-
-
-/* =========================================================
-   MODAL FORM
-========================================================= */
 
 .admin-category-modal form {
   padding: 26px 28px 28px;
@@ -8961,11 +8263,6 @@ button {
   box-shadow: 0 0 0 3px rgba(180, 148, 82, 0.09);
 }
 
-
-/* =========================================================
-   MODAL ACTIONS
-========================================================= */
-
 .admin-category-modal-actions {
   display: flex;
   align-items: center;
@@ -9012,21 +8309,11 @@ button {
   transform: translateY(-1px);
 }
 
-
-/* =========================================================
-   RESPONSIVE - TABLET
-========================================================= */
-
 @media (max-width: 1100px) {
   .admin-category-stats {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
-
-
-/* =========================================================
-   RESPONSIVE - MOBILE
-========================================================= */
 
 @media (max-width: 700px) {
   .admin-categories-header {
@@ -9081,11 +8368,6 @@ button {
   }
 }
 
-
-/* =========================================================
-   RESPONSIVE - SMALL MOBILE
-========================================================= */
-
 @media (max-width: 480px) {
   .admin-categories-header h1 {
     font-size: 34px;
@@ -9113,18 +8395,10 @@ button {
   }
 }
 
-/* =========================================================
-   AL BRR ADMIN - INVENTORY
-========================================================= */
-
 .admin-inventory-page {
   width: 100%;
   padding-bottom: 50px;
 }
-
-/* =========================================================
-   HEADER
-========================================================= */
 
 .admin-inventory-header {
   display: flex;
@@ -9142,10 +8416,6 @@ button {
   font-weight: 600;
   color: #171512;
 }
-
-/* =========================================================
-   STATS
-========================================================= */
 
 .admin-inventory-stats {
   display: grid;
@@ -9219,10 +8489,6 @@ button {
   font-size: 9px;
 }
 
-/* =========================================================
-   STOCK OVERVIEW PANEL
-========================================================= */
-
 .admin-inventory-panel,
 .admin-stock-history-panel {
   overflow: hidden;
@@ -9256,10 +8522,6 @@ button {
   font-size: 9px;
   line-height: 1.6;
 }
-
-/* =========================================================
-   TOOLBAR
-========================================================= */
 
 .admin-inventory-toolbar {
   display: flex;
@@ -9333,10 +8595,6 @@ button {
   box-shadow: 0 0 0 3px rgba(180, 148, 82, 0.09);
 }
 
-/* =========================================================
-   INVENTORY TABLE
-========================================================= */
-
 .admin-inventory-table-wrap,
 .admin-stock-history-table-wrap {
   width: 100%;
@@ -9392,10 +8650,6 @@ button {
 .admin-stock-history-table tbody tr:last-child td {
   border-bottom: 0;
 }
-
-/* =========================================================
-   PRODUCT
-========================================================= */
 
 .admin-inventory-product {
   display: flex;
@@ -9460,10 +8714,6 @@ button {
   font-weight: 600;
 }
 
-/* =========================================================
-   STOCK STATUS
-========================================================= */
-
 .admin-stock-status {
   display: inline-flex;
   align-items: center;
@@ -9517,10 +8767,6 @@ button {
   background: #b95249;
 }
 
-/* =========================================================
-   ACTIONS
-========================================================= */
-
 .admin-inventory-actions {
   display: flex;
   align-items: center;
@@ -9569,10 +8815,6 @@ button {
   cursor: not-allowed;
 }
 
-/* =========================================================
-   EMPTY / FOOTER
-========================================================= */
-
 .admin-inventory-empty {
   padding: 50px 20px !important;
   color: #999186 !important;
@@ -9592,10 +8834,6 @@ button {
 .admin-inventory-footer strong {
   color: #544b3e;
 }
-
-/* =========================================================
-   STOCK HISTORY
-========================================================= */
 
 .admin-stock-history-header {
   display: flex;
@@ -9682,10 +8920,6 @@ button {
   color: #a44b43;
 }
 
-/* =========================================================
-   STOCK MODAL OVERLAY
-========================================================= */
-
 .admin-stock-modal-overlay {
   position: fixed;
   z-index: 9999;
@@ -9699,10 +8933,6 @@ button {
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
 }
-
-/* =========================================================
-   STOCK MODAL
-========================================================= */
 
 .admin-stock-modal {
   position: relative;
@@ -9742,10 +8972,6 @@ button {
     transform: translateY(0) scale(1);
   }
 }
-
-/* =========================================================
-   MODAL HEADER
-========================================================= */
 
 .admin-stock-modal-header {
   display: flex;
@@ -9791,10 +9017,6 @@ button {
   background: #faf7ef;
   color: #8d7139;
 }
-
-/* =========================================================
-   MODAL PRODUCT
-========================================================= */
 
 .admin-stock-modal-product {
   display: flex;
@@ -9873,10 +9095,6 @@ button {
   font-size: 24px;
   line-height: 1;
 }
-
-/* =========================================================
-   MODAL FORM
-========================================================= */
 
 .admin-stock-modal form {
   padding: 24px 28px 28px;
@@ -9981,10 +9199,6 @@ button {
   box-shadow: 0 0 0 3px rgba(180, 148, 82, 0.09);
 }
 
-/* =========================================================
-   STOCK PREVIEW / ERROR
-========================================================= */
-
 .admin-stock-preview {
   display: flex;
   align-items: center;
@@ -10021,10 +9235,6 @@ button {
   font-size: 9px;
   line-height: 1.5;
 }
-
-/* =========================================================
-   MODAL ACTIONS
-========================================================= */
 
 .admin-stock-modal-actions {
   display: flex;
@@ -10081,10 +9291,6 @@ button {
   border-color: #873a34;
   background: #873a34;
 }
-
-/* =========================================================
-   RESPONSIVE
-========================================================= */
 
 @media (max-width: 1200px) {
   .admin-inventory-stats {
@@ -10178,18 +9384,10 @@ button {
   }
 }
 
-/* =========================================================
-   AL BRR ADMIN - ORDERS
-========================================================= */
-
 .admin-orders-page {
   width: 100%;
   padding-bottom: 50px;
 }
-
-/* =========================================================
-   HEADER
-========================================================= */
 
 .admin-orders-header {
   margin-bottom: 32px;
@@ -10203,10 +9401,6 @@ button {
   line-height: 1;
   font-weight: 600;
 }
-
-/* =========================================================
-   STATS
-========================================================= */
 
 .admin-order-stats {
   display: grid;
@@ -10280,10 +9474,6 @@ button {
   font-size: 9px;
 }
 
-/* =========================================================
-   ORDERS PANEL
-========================================================= */
-
 .admin-orders-panel {
   overflow: hidden;
   border: 1px solid #e4ded4;
@@ -10311,10 +9501,6 @@ button {
   font-family: "Montserrat", sans-serif;
   font-size: 9px;
 }
-
-/* =========================================================
-   TOOLBAR
-========================================================= */
 
 .admin-orders-toolbar {
   display: flex;
@@ -10394,10 +9580,6 @@ button {
   box-shadow: 0 0 0 3px rgba(180, 148, 82, 0.09);
 }
 
-/* =========================================================
-   TABLE
-========================================================= */
-
 .admin-orders-table-wrap {
   width: 100%;
   overflow-x: auto;
@@ -10446,10 +9628,6 @@ button {
 .admin-orders-table tbody tr:last-child td {
   border-bottom: 0;
 }
-
-/* =========================================================
-   ORDER TABLE DETAILS
-========================================================= */
 
 .admin-order-id {
   padding: 0;
@@ -10540,10 +9718,6 @@ button {
   white-space: nowrap;
 }
 
-/* =========================================================
-   ORDER STATUS
-========================================================= */
-
 .admin-order-status,
 .admin-payment-status {
   display: inline-flex;
@@ -10567,8 +9741,6 @@ button {
   border-radius: 50%;
 }
 
-/* Pending */
-
 .admin-order-status.pending,
 .admin-payment-status.pending {
   border: 1px solid #dfc98e;
@@ -10581,8 +9753,6 @@ button {
   background: #bc8f27;
 }
 
-/* Confirmed */
-
 .admin-order-status.confirmed {
   border: 1px solid #c7c0a9;
   background: #f8f6ee;
@@ -10592,8 +9762,6 @@ button {
 .admin-order-status.confirmed i {
   background: #9b8953;
 }
-
-/* Processing */
 
 .admin-order-status.processing {
   border: 1px solid #b9cbd8;
@@ -10605,8 +9773,6 @@ button {
   background: #5d839d;
 }
 
-/* Shipped */
-
 .admin-order-status.shipped {
   border: 1px solid #b9bdd9;
   background: #f3f4fb;
@@ -10616,8 +9782,6 @@ button {
 .admin-order-status.shipped i {
   background: #686fa0;
 }
-
-/* Delivered / Completed / Paid */
 
 .admin-order-status.delivered,
 .admin-order-status.completed,
@@ -10633,8 +9797,6 @@ button {
   background: #5e8a61;
 }
 
-/* Cancelled / Failed */
-
 .admin-order-status.cancelled,
 .admin-payment-status.failed {
   border: 1px solid #dfb3ae;
@@ -10646,8 +9808,6 @@ button {
 .admin-payment-status.failed i {
   background: #b95249;
 }
-
-/* Returned / Refunded */
 
 .admin-order-status.returned,
 .admin-order-status.refunded,
@@ -10664,10 +9824,6 @@ button {
 .admin-payment-status.partially-refunded i {
   background: #866590;
 }
-
-/* =========================================================
-   VIEW BUTTON
-========================================================= */
 
 .admin-view-order-btn {
   min-width: 58px;
@@ -10692,10 +9848,6 @@ button {
   color: #8d7139;
 }
 
-/* =========================================================
-   EMPTY / FOOTER
-========================================================= */
-
 .admin-orders-empty {
   padding: 55px 20px !important;
   color: #999186 !important;
@@ -10716,10 +9868,6 @@ button {
   color: #544b3e;
 }
 
-/* =========================================================
-   ORDER DRAWER OVERLAY
-========================================================= */
-
 .admin-order-drawer-overlay {
   position: fixed;
   z-index: 9999;
@@ -10730,10 +9878,6 @@ button {
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
 }
-
-/* =========================================================
-   DRAWER
-========================================================= */
 
 .admin-order-drawer {
   width: min(610px, 100%);
@@ -10754,10 +9898,6 @@ button {
     transform: translateX(0);
   }
 }
-
-/* =========================================================
-   DRAWER HEADER
-========================================================= */
 
 .admin-order-drawer-header {
   position: sticky;
@@ -10819,10 +9959,6 @@ button {
   padding: 25px;
 }
 
-/* =========================================================
-   DETAIL SECTIONS
-========================================================= */
-
 .admin-order-detail-section {
   margin-bottom: 20px;
   padding: 22px;
@@ -10858,10 +9994,6 @@ button {
   font-weight: 600;
 }
 
-/* =========================================================
-   STATUS CONTROLS
-========================================================= */
-
 .admin-order-status-controls {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -10896,10 +10028,6 @@ button {
   border-color: #b49452;
   box-shadow: 0 0 0 3px rgba(180, 148, 82, 0.09);
 }
-
-/* =========================================================
-   CUSTOMER DETAILS
-========================================================= */
 
 .admin-order-customer-card {
   display: flex;
@@ -10963,10 +10091,6 @@ button {
   font-size: 9px;
   line-height: 1.7;
 }
-
-/* =========================================================
-   ORDER ITEMS
-========================================================= */
 
 .admin-order-detail-items {
   display: flex;
@@ -11046,10 +10170,6 @@ button {
   font-size: 9px;
 }
 
-/* =========================================================
-   PAYMENT SUMMARY
-========================================================= */
-
 .admin-order-payment-summary {
   display: flex;
   flex-direction: column;
@@ -11099,10 +10219,6 @@ button {
   font-family: "Cormorant Garamond", serif;
   font-size: 22px;
 }
-
-/* =========================================================
-   RESPONSIVE
-========================================================= */
 
 @media (max-width: 1200px) {
   .admin-order-stats {
@@ -11194,10 +10310,6 @@ button {
   }
 }
 
-/* =========================================================
-   AL BRR ADMIN - CUSTOMERS
-========================================================= */
-
 .admin-customers-page {
   width: 100%;
   padding-bottom: 50px;
@@ -11215,8 +10327,6 @@ button {
   line-height: 1;
   font-weight: 600;
 }
-
-/* ================= STATS ================= */
 
 .admin-customer-stats {
   display: grid;
@@ -11289,8 +10399,6 @@ button {
   font-size: 9px;
 }
 
-/* ================= PANEL ================= */
-
 .admin-customers-panel {
   overflow: hidden;
   border: 1px solid #e4ded4;
@@ -11318,8 +10426,6 @@ button {
   font-family: "Montserrat", sans-serif;
   font-size: 9px;
 }
-
-/* ================= TOOLBAR ================= */
 
 .admin-customers-toolbar {
   display: flex;
@@ -11381,8 +10487,6 @@ button {
   font-size: 9px;
   font-weight: 600;
 }
-
-/* ================= TABLE ================= */
 
 .admin-customers-table-wrap {
   width: 100%;
@@ -11498,8 +10602,6 @@ button {
   white-space: nowrap;
 }
 
-/* ================= STATUS ================= */
-
 .admin-customer-status {
   display: inline-flex;
   align-items: center;
@@ -11541,8 +10643,6 @@ button {
 .admin-customer-status.inactive i {
   background: #91897e;
 }
-
-/* ================= ACTIONS ================= */
 
 .admin-customer-actions {
   display: flex;
@@ -11592,10 +10692,6 @@ button {
   font-family: "Montserrat", sans-serif;
   font-size: 9px;
 }
-
-/* =========================================================
-   CUSTOMER DRAWER
-========================================================= */
 
 .admin-customer-drawer-overlay {
   position: fixed;
@@ -11789,8 +10885,6 @@ button {
   font-size: 18px;
 }
 
-/* ================= ORDER HISTORY ================= */
-
 .admin-customer-order-row {
   display: flex;
   align-items: center;
@@ -11832,10 +10926,6 @@ button {
   font-family: "Montserrat", sans-serif;
   font-size: 9px;
 }
-
-/* =========================================================
-   EDIT MODAL
-========================================================= */
 
 .admin-customer-modal-overlay {
   position: fixed;
@@ -11977,8 +11067,6 @@ button {
   color: #d8bd7b;
 }
 
-/* ================= RESPONSIVE ================= */
-
 @media (max-width: 1200px) {
   .admin-customer-stats {
     grid-template-columns: repeat(2, 1fr);
@@ -12047,10 +11135,6 @@ button {
   }
 }
 
-/* =========================================================
-   AL BRR ADMIN - PAYMENTS
-========================================================= */
-
 .admin-payments-page {
   width: 100%;
   padding-bottom: 50px;
@@ -12068,8 +11152,6 @@ button {
   line-height: 1;
   font-weight: 600;
 }
-
-/* ================= STATS ================= */
 
 .admin-payment-stats {
   display: grid;
@@ -12144,8 +11226,6 @@ button {
   font-size: 9px;
 }
 
-/* ================= PANEL ================= */
-
 .admin-payments-panel {
   overflow: hidden;
   border: 1px solid #e4ded4;
@@ -12173,8 +11253,6 @@ button {
   font-family: "Montserrat", sans-serif;
   font-size: 9px;
 }
-
-/* ================= TOOLBAR ================= */
 
 .admin-payments-toolbar {
   display: flex;
@@ -12251,8 +11329,6 @@ button {
   border-color: #b49452;
   box-shadow: 0 0 0 3px rgba(180, 148, 82, 0.09);
 }
-
-/* ================= TABLE ================= */
 
 .admin-payments-table-wrap {
   width: 100%;
@@ -12381,8 +11457,6 @@ button {
   text-transform: uppercase;
 }
 
-/* ================= STATUS ================= */
-
 .admin-payment-transaction-status {
   display: inline-flex;
   align-items: center;
@@ -12446,8 +11520,6 @@ button {
   background: #866590;
 }
 
-/* ================= VIEW ================= */
-
 .admin-payment-view-btn {
   min-width: 58px;
   height: 31px;
@@ -12484,10 +11556,6 @@ button {
   font-family: "Montserrat", sans-serif;
   font-size: 9px;
 }
-
-/* =========================================================
-   PAYMENT DRAWER
-========================================================= */
 
 .admin-payment-drawer-overlay {
   position: fixed;
@@ -12610,8 +11678,6 @@ button {
   font-weight: 600;
 }
 
-/* ================= BIG AMOUNT ================= */
-
 .admin-payment-big-amount {
   display: flex;
   align-items: center;
@@ -12673,8 +11739,6 @@ button {
   font-size: 9px;
 }
 
-/* ================= STATUS EDITOR ================= */
-
 .admin-payment-status-editor label {
   display: block;
   margin-bottom: 8px;
@@ -12711,8 +11775,6 @@ button {
   font-size: 8px;
   line-height: 1.6;
 }
-
-/* ================= CUSTOMER CARD ================= */
 
 .admin-payment-customer-card {
   display: flex;
@@ -12754,8 +11816,6 @@ button {
   font-family: "Montserrat", sans-serif;
   font-size: 8px;
 }
-
-/* ================= RESPONSIVE ================= */
 
 @media (max-width: 1200px) {
   .admin-payment-stats {
@@ -12829,10 +11889,6 @@ button {
   }
 }
 
-/* =========================================================
-   AL BRR ADMIN - INVOICES
-========================================================= */
-
 .admin-invoices-page {
   width: 100%;
   padding-bottom: 50px;
@@ -12850,8 +11906,6 @@ button {
   line-height: 1;
   font-weight: 600;
 }
-
-/* ================= STATS ================= */
 
 .admin-invoice-stats {
   display: grid;
@@ -12926,8 +11980,6 @@ button {
   font-size: 9px;
 }
 
-/* ================= PANEL ================= */
-
 .admin-invoices-panel {
   overflow: hidden;
   border: 1px solid #e4ded4;
@@ -12955,8 +12007,6 @@ button {
   font-family: "Montserrat", sans-serif;
   font-size: 9px;
 }
-
-/* ================= TOOLBAR ================= */
 
 .admin-invoices-toolbar {
   display: flex;
@@ -13017,8 +12067,6 @@ button {
   font-size: 9px;
   font-weight: 600;
 }
-
-/* ================= TABLE ================= */
 
 .admin-invoices-table-wrap {
   width: 100%;
@@ -13138,8 +12186,6 @@ button {
   white-space: nowrap;
 }
 
-/* ================= STATUS ================= */
-
 .admin-invoice-status {
   display: inline-flex;
   align-items: center;
@@ -13203,8 +12249,6 @@ button {
   background: #866590;
 }
 
-/* ================= ACTIONS ================= */
-
 .admin-invoice-actions {
   display: flex;
   justify-content: flex-end;
@@ -13252,10 +12296,6 @@ button {
   font-size: 9px;
 }
 
-/* =========================================================
-   INVOICE PREVIEW OVERLAY
-========================================================= */
-
 .admin-invoice-overlay {
   position: fixed;
   z-index: 10000;
@@ -13274,8 +12314,6 @@ button {
   background: #eee9e0;
   box-shadow: 0 30px 90px rgba(0, 0, 0, 0.35);
 }
-
-/* ================= PREVIEW TOPBAR ================= */
 
 .admin-invoice-preview-topbar {
   display: flex;
@@ -13336,10 +12374,6 @@ button {
   padding: 0;
   font-size: 18px;
 }
-
-/* =========================================================
-   INVOICE DOCUMENT
-========================================================= */
 
 .admin-invoice-document {
   width: calc(100% - 60px);
@@ -13410,8 +12444,6 @@ button {
   font-size: 8px;
 }
 
-/* ================= INFO ================= */
-
 .admin-invoice-info-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -13457,8 +12489,6 @@ button {
   font-size: 8px;
 }
 
-/* ================= ITEMS ================= */
-
 .admin-invoice-items-wrap {
   overflow-x: auto;
 }
@@ -13500,8 +12530,6 @@ button {
   text-align: center !important;
 }
 
-/* ================= TOTALS ================= */
-
 .admin-invoice-totals {
   width: min(340px, 100%);
   margin: 27px 0 0 auto;
@@ -13530,8 +12558,6 @@ button {
   font-family: "Cormorant Garamond", serif;
   font-size: 18px;
 }
-
-/* ================= PAYMENT BOX ================= */
 
 .admin-invoice-payment-box {
   margin-top: 35px;
@@ -13566,8 +12592,6 @@ button {
   font-size: 8px;
   text-align: center;
 }
-
-/* ================= RESPONSIVE ================= */
 
 @media (max-width: 1200px) {
   .admin-invoice-stats {
@@ -13646,10 +12670,6 @@ button {
   }
 }
 
-/* =========================================================
-   AL BRR ADMIN - COUPONS
-========================================================= */
-
 .admin-coupons-page {
   width: 100%;
   padding-bottom: 50px;
@@ -13701,8 +12721,6 @@ button {
   border-color: #9c7d3f;
   background: #2a261f;
 }
-
-/* ================= STATS ================= */
 
 .admin-coupon-stats {
   display: grid;
@@ -13776,8 +12794,6 @@ button {
   font-size: 9px;
 }
 
-/* ================= PANEL ================= */
-
 .admin-coupons-panel {
   overflow: hidden;
   border: 1px solid #e4ded4;
@@ -13805,8 +12821,6 @@ button {
   font-family: "Montserrat", sans-serif;
   font-size: 9px;
 }
-
-/* ================= TOOLBAR ================= */
 
 .admin-coupons-toolbar {
   display: flex;
@@ -13867,8 +12881,6 @@ button {
   font-size: 9px;
   font-weight: 600;
 }
-
-/* ================= TABLE ================= */
 
 .admin-coupons-table-wrap {
   width: 100%;
@@ -13994,8 +13006,6 @@ button {
   font-size: 8px;
 }
 
-/* ================= STATUS ================= */
-
 .admin-coupon-status {
   display: inline-flex;
   align-items: center;
@@ -14061,8 +13071,6 @@ button {
   background: #b95249;
 }
 
-/* ================= ACTIONS ================= */
-
 .admin-coupon-actions {
   display: flex;
   justify-content: flex-end;
@@ -14110,10 +13118,6 @@ button {
   font-family: "Montserrat", sans-serif;
   font-size: 9px;
 }
-
-/* =========================================================
-   COUPON MODAL
-========================================================= */
 
 .admin-coupon-modal-overlay {
   position: fixed;
@@ -14328,8 +13332,6 @@ button {
   color: #d8bd7b;
 }
 
-/* ================= RESPONSIVE ================= */
-
 @media (max-width: 1200px) {
   .admin-coupon-stats {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -14398,10 +13400,6 @@ button {
   }
 }
 
-/* =========================================================
-   AL BRR ADMIN - REPORTS
-========================================================= */
-
 .admin-reports-page {
   width: 100%;
   padding-bottom: 50px;
@@ -14443,8 +13441,6 @@ button {
   border-color: #9e8148;
   background: #2b2720;
 }
-
-/* ================= DATE FILTER ================= */
 
 .admin-report-filter-panel {
   margin-bottom: 22px;
@@ -14538,8 +13534,6 @@ button {
   cursor: pointer;
 }
 
-/* ================= SUMMARY ================= */
-
 .admin-report-summary {
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
@@ -14585,8 +13579,6 @@ button {
   font-family: "Montserrat", sans-serif;
   font-size: 8px;
 }
-
-/* ================= REPORT TYPES ================= */
 
 .admin-report-types {
   display: grid;
@@ -14651,8 +13643,6 @@ button {
   line-height: 1.5;
 }
 
-/* ================= RESULTS ================= */
-
 .admin-report-results {
   overflow: hidden;
   border: 1px solid #e4ded4;
@@ -14679,8 +13669,6 @@ button {
   font-family: "Montserrat", sans-serif;
   font-size: 8px;
 }
-
-/* ================= TWO COLUMNS ================= */
 
 .admin-report-two-columns {
   display: grid;
@@ -14771,8 +13759,6 @@ button {
   text-align: center;
 }
 
-/* ================= TABLE ================= */
-
 .admin-report-table-wrap {
   width: 100%;
   overflow-x: auto;
@@ -14851,8 +13837,6 @@ button {
   text-align: center;
 }
 
-/* ================= INVENTORY STATUS ================= */
-
 .admin-report-stock-status {
   display: inline-flex;
   min-height: 26px;
@@ -14882,8 +13866,6 @@ button {
   background: #fff3f2;
   color: #a44b43;
 }
-
-/* ================= ORDER STATUS CARDS ================= */
 
 .admin-report-status-grid {
   display: grid;
@@ -14938,8 +13920,6 @@ button {
   font-size: 9px;
   text-align: center;
 }
-
-/* ================= RESPONSIVE ================= */
 
 @media (max-width: 1250px) {
   .admin-report-summary {
@@ -15043,10 +14023,6 @@ button {
   }
 }
 
-/* =========================================================
-   AL BRR ADMIN - NOTIFICATIONS
-========================================================= */
-
 .admin-notifications-page {
   width: 100%;
   padding-bottom: 50px;
@@ -15104,8 +14080,6 @@ button {
   cursor: not-allowed;
   opacity: 0.45;
 }
-
-/* ================= STATS ================= */
 
 .admin-notification-stats {
   display: grid;
@@ -15175,8 +14149,6 @@ button {
   font-size: 9px;
 }
 
-/* ================= PANEL ================= */
-
 .admin-notifications-panel {
   overflow: hidden;
   border: 1px solid #e4ded4;
@@ -15223,8 +14195,6 @@ button {
   font-weight: 700;
   text-transform: uppercase;
 }
-
-/* ================= TOOLBAR ================= */
 
 .admin-notifications-toolbar {
   display: flex;
@@ -15275,8 +14245,6 @@ button {
   font-weight: 600;
 }
 
-/* ================= LIST ================= */
-
 .admin-notifications-list {
   width: 100%;
 }
@@ -15318,8 +14286,6 @@ button {
   opacity: 0.82;
 }
 
-/* ================= ICON ================= */
-
 .admin-notification-type-icon {
   display: flex;
   align-items: center;
@@ -15344,8 +14310,6 @@ button {
 .admin-notification-type-icon.customer {
   background: #211f1b;
 }
-
-/* ================= CONTENT ================= */
 
 .admin-notification-content {
   min-width: 0;
@@ -15425,8 +14389,6 @@ button {
   text-transform: uppercase;
 }
 
-/* ================= ACTIONS ================= */
-
 .admin-notification-actions {
   display: flex;
   gap: 6px;
@@ -15458,8 +14420,6 @@ button {
   background: #fff3f2;
   color: #a44b43;
 }
-
-/* ================= EMPTY ================= */
 
 .admin-notifications-empty {
   display: flex;
@@ -15498,8 +14458,6 @@ button {
   font-family: "Montserrat", sans-serif;
   font-size: 8px;
 }
-
-/* ================= RESPONSIVE ================= */
 
 @media (max-width: 1000px) {
   .admin-notification-item {
@@ -15584,10 +14542,6 @@ button {
   }
 }
 
-/* =========================================================
-   AL BRR ADMIN - USERS & ROLES
-========================================================= */
-
 .admin-users-page {
   width: 100%;
   padding-bottom: 50px;
@@ -15639,8 +14593,6 @@ button {
   border-color: #9c7d3f;
   background: #2a261f;
 }
-
-/* ================= STATS ================= */
 
 .admin-user-stats {
   display: grid;
@@ -15712,8 +14664,6 @@ button {
   font-size: 9px;
 }
 
-/* ================= PANEL ================= */
-
 .admin-users-panel {
   overflow: hidden;
   border: 1px solid #e4ded4;
@@ -15741,8 +14691,6 @@ button {
   font-family: "Montserrat", sans-serif;
   font-size: 9px;
 }
-
-/* ================= TOOLBAR ================= */
 
 .admin-users-toolbar {
   display: flex;
@@ -15809,8 +14757,6 @@ button {
   font-weight: 600;
 }
 
-/* ================= TABLE ================= */
-
 .admin-users-table-wrap {
   width: 100%;
   overflow-x: auto;
@@ -15851,8 +14797,6 @@ button {
 .admin-users-table tbody tr:hover {
   background: #fdfcf9;
 }
-
-/* ================= PROFILE ================= */
 
 .admin-user-profile-cell {
   display: flex;
@@ -15908,8 +14852,6 @@ button {
   font-size: 7px;
 }
 
-/* ================= ROLE ================= */
-
 .admin-user-role {
   display: inline-flex;
   min-height: 27px;
@@ -15962,8 +14904,6 @@ button {
   white-space: nowrap;
 }
 
-/* ================= STATUS ================= */
-
 .admin-user-status {
   display: inline-flex;
   align-items: center;
@@ -16003,8 +14943,6 @@ button {
 .admin-user-status.inactive i {
   background: #91897e;
 }
-
-/* ================= ACTIONS ================= */
 
 .admin-user-actions {
   display: flex;
@@ -16052,10 +14990,6 @@ button {
   font-family: "Montserrat", sans-serif;
   font-size: 9px;
 }
-
-/* =========================================================
-   USER MODAL
-========================================================= */
 
 .admin-user-modal-overlay {
   position: fixed;
@@ -16179,8 +15113,6 @@ button {
   box-shadow: 0 0 0 3px rgba(180, 148, 82, 0.09);
 }
 
-/* ================= ROLE SECTION ================= */
-
 .admin-user-role-section,
 .admin-user-permissions-section {
   margin-top: 25px;
@@ -16254,8 +15186,6 @@ button {
   font-size: 7px;
   line-height: 1.6;
 }
-
-/* ================= PERMISSIONS ================= */
 
 .admin-user-permission-tools {
   display: flex;
@@ -16340,8 +15270,6 @@ button {
   font-weight: 700;
 }
 
-/* ================= ERROR / ACTIONS ================= */
-
 .admin-user-error {
   margin-top: 18px;
   padding: 11px 13px;
@@ -16384,8 +15312,6 @@ button {
   background: #191713;
   color: #d8bd7b;
 }
-
-/* ================= RESPONSIVE ================= */
 
 @media (max-width: 1200px) {
   .admin-user-stats {
@@ -16479,10 +15405,6 @@ button {
   }
 }
 
-/* =========================================================
-   AL BRR ADMIN - ACTIVITY LOGS
-========================================================= */
-
 .admin-activity-page {
   width: 100%;
   padding-bottom: 50px;
@@ -16539,8 +15461,6 @@ button {
   cursor: not-allowed;
   opacity: 0.45;
 }
-
-/* ================= STATS ================= */
 
 .admin-activity-stats {
   display: grid;
@@ -16604,8 +15524,6 @@ button {
   font-family: "Montserrat", sans-serif;
   font-size: 8px;
 }
-
-/* ================= FILTER PANEL ================= */
 
 .admin-activity-filter-panel {
   display: flex;
@@ -16675,8 +15593,6 @@ button {
   font-weight: 600;
 }
 
-/* ================= PANEL ================= */
-
 .admin-activity-panel {
   overflow: hidden;
   border: 1px solid #e4ded4;
@@ -16724,8 +15640,6 @@ button {
   text-transform: uppercase;
 }
 
-/* ================= TABLE ================= */
-
 .admin-activity-table-wrap {
   width: 100%;
   overflow-x: auto;
@@ -16766,8 +15680,6 @@ button {
 .admin-activity-table tbody tr:hover {
   background: #fdfcf9;
 }
-
-/* ================= USER ================= */
 
 .admin-activity-user {
   display: flex;
@@ -16812,8 +15724,6 @@ button {
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-
-/* ================= BADGES ================= */
 
 .admin-activity-badge {
   display: inline-flex;
@@ -16868,8 +15778,6 @@ button {
   background: #f8f4ed;
   color: #716047;
 }
-
-/* ================= DESCRIPTION ================= */
 
 .admin-activity-description {
   max-width: 340px;
@@ -16943,10 +15851,6 @@ button {
   font-family: "Montserrat", sans-serif;
   font-size: 8px;
 }
-
-/* =========================================================
-   ACTIVITY DRAWER
-========================================================= */
 
 .admin-activity-drawer-overlay {
   position: fixed;
@@ -17082,8 +15986,6 @@ button {
   overflow-wrap: anywhere;
 }
 
-/* ================= RESPONSIVE ================= */
-
 @media (max-width: 1200px) {
   .admin-activity-stats {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -17163,10 +16065,6 @@ button {
   }
 }
 
-/* =========================================================
-   AL BRR ADMIN - SETTINGS
-========================================================= */
-
 .admin-settings-page {
   width: 100%;
   padding-bottom: 50px;
@@ -17229,8 +16127,6 @@ button {
   background: #faf7ef;
 }
 
-/* ================= SECTION ================= */
-
 .admin-settings-section {
   margin-bottom: 20px;
   padding: 26px;
@@ -17278,8 +16174,6 @@ button {
   font-size: 8px;
   line-height: 1.5;
 }
-
-/* ================= FIELDS ================= */
 
 .admin-settings-grid {
   display: grid;
@@ -17348,8 +16242,6 @@ button {
   font-size: 7px;
   line-height: 1.5;
 }
-
-/* ================= SWITCHES ================= */
 
 .admin-settings-switch-list {
   display: flex;
@@ -17447,8 +16339,6 @@ button {
   background: #191713;
 }
 
-/* ================= INLINE FIELD ================= */
-
 .admin-settings-inline-field {
   display: flex;
   align-items: center;
@@ -17496,8 +16386,6 @@ button {
   border-color: #b49452;
 }
 
-/* ================= MESSAGES ================= */
-
 .admin-settings-message {
   display: flex;
   flex-direction: column;
@@ -17528,8 +16416,6 @@ button {
   background: #fff3f2;
   color: #a44b43;
 }
-
-/* ================= BOTTOM ================= */
 
 .admin-settings-bottom-actions {
   display: flex;
@@ -17562,8 +16448,6 @@ button {
   text-transform: uppercase;
   cursor: pointer;
 }
-
-/* ================= RESPONSIVE ================= */
 
 @media (max-width: 800px) {
   .admin-settings-grid {
@@ -17630,10 +16514,6 @@ button {
     text-align: left;
   }
 }
-
-/* =========================================================
-   AL BRR ADMIN LOGIN
-========================================================= */
 
 .admin-login-page {
   min-height: 100vh;
@@ -17847,5 +16727,167 @@ button {
 
   .admin-login-heading h1 {
     font-size: 34px;
+  }
+}
+
+.brand-logo-link {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  gap: 14px;
+
+  flex-shrink: 0;
+  text-decoration: none;
+}
+
+.header-brand-logo {
+  display: block;
+
+  width: 72px;
+  height: 70px;
+
+  object-fit: fill;
+
+  transform: scaleX(1.15);
+  transform-origin: center;
+}
+
+.header-brand-name {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 70px;
+  line-height: 1;
+}
+
+.header-brand-name strong {
+  display: block;
+
+  margin: 0;
+
+  color: #f3eee5;
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: 27px;
+  font-weight: 600;
+
+  line-height: 1;
+  letter-spacing: 0.13em;
+
+  white-space: nowrap;
+}
+
+@media (max-width: 900px) {
+  .brand-logo-link {
+    gap: 11px;
+  }
+
+  .header-brand-logo {
+    width: 64px;
+    height: 62px;
+
+    transform: scaleX(1.14);
+  }
+
+  .header-brand-name {
+    height: 62px;
+  }
+
+  .header-brand-name strong {
+    font-size: 23px;
+  }
+}
+
+@media (max-width: 600px) {
+  .brand-logo-link {
+    gap: 8px;
+  }
+
+  .header-brand-logo {
+    width: 54px;
+    height: 54px;
+
+    transform: scaleX(1.12);
+  }
+
+  .header-brand-name {
+    height: 54px;
+  }
+
+  .header-brand-name strong {
+    font-size: 19px;
+    letter-spacing: 0.1em;
+  }
+}
+
+.footer-logo-brand {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  gap: 12px;
+
+  text-decoration: none;
+}
+
+.footer-brand-logo {
+  display: block;
+
+  width: 54px;
+  height: 54px;
+
+  object-fit: fill;
+
+  transform: scaleX(1.12);
+  transform-origin: center;
+
+  flex-shrink: 0;
+}
+
+.footer-brand-name {
+  color: #f3eee5;
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: 22px;
+  font-weight: 600;
+
+  line-height: 1;
+  letter-spacing: 0.13em;
+
+  white-space: nowrap;
+}
+
+@media (max-width: 900px) {
+  .footer-logo-brand {
+    gap: 10px;
+  }
+
+  .footer-brand-logo {
+    width: 50px;
+    height: 50px;
+  }
+
+  .footer-brand-name {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer-logo-brand {
+    gap: 8px;
+  }
+
+  .footer-brand-logo {
+    width: 45px;
+    height: 45px;
+
+    transform: scaleX(1.1);
+  }
+
+  .footer-brand-name {
+    font-size: 18px;
+    letter-spacing: 0.1em;
   }
 }

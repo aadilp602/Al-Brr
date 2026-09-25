@@ -41,7 +41,7 @@ const recentOrders = [
 const topProducts = [
   { name: 'Al-Durrat', sold: 42, percent: 100 },
   { name: 'Gen-Z7', sold: 28, percent: 67 },
-  { name: 'Alfa-X', sold: 18, percent: 43 },
+  { name: 'Alfa-Men', sold: 18, percent: 43 },
   { name: 'Saji Oudh', sold: 15, percent: 36 },
 ]
 

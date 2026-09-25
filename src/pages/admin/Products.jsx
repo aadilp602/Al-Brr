@@ -63,8 +63,8 @@ const defaultProducts = [
   },
 
   {
-    id: 'alfa-x',
-    name: 'Alfa-X',
+    id: 'alfa-Men',
+    name: 'Alfa-Men',
     sku: 'AB-NR-003',
     category: 'Noir',
     brand: 'Al Brr',

@@ -204,7 +204,7 @@ function Contact() {
                     </span>
 
                     <strong>
-                      support@albrrperfumes.com
+                      albrrperfumerie@gmail.com
                     </strong>
                   </div>
 
@@ -227,7 +227,7 @@ function Contact() {
                     </strong>
 
                     <small>
-                      10:00 AM — 7:00 PM
+                      10:00 AM — 9:00 PM
                     </small>
                   </div>
 
@@ -246,11 +246,11 @@ function Contact() {
                     </span>
 
                     <strong>
-                      India
+                      Al-Brr Perfume
                     </strong>
 
                     <small>
-                      Online fragrance store
+                      Nashik, lasalgaon 422306.
                     </small>
                   </div>
 
