@@ -1,7 +1,8 @@
-import { Routes, Route } from 'react-router-dom'
+import { Navigate, Outlet, Route, Routes } from 'react-router-dom'
 
 import AdminLayout from '../components/admin/AdminLayout'
 
+import AdminLogin from '../pages/admin/AdminLogin'
 import Dashboard from '../pages/admin/Dashboard'
 import Products from '../pages/admin/Products'
 import AddProduct from '../pages/admin/AddProduct'
@@ -19,54 +20,132 @@ import Users from '../pages/admin/Users'
 import ActivityLogs from '../pages/admin/ActivityLogs'
 import Settings from '../pages/admin/Settings'
 
+const ADMIN_SESSION_KEY = 'al-brr-admin-session'
+
+function isAdminAuthenticated() {
+  try {
+    const session = JSON.parse(
+      sessionStorage.getItem(ADMIN_SESSION_KEY)
+    )
+
+    return session?.authenticated === true
+  } catch {
+    return false
+  }
+}
+
+function ProtectedAdminRoute() {
+  if (!isAdminAuthenticated()) {
+    return (
+      <Navigate
+        to="/admin/login"
+        replace
+      />
+    )
+  }
+
+  return <Outlet />
+}
+
 function AdminRoutes() {
   return (
     <Routes>
-      <Route path="/admin" element={<AdminLayout />}>
+      {/* PUBLIC ADMIN LOGIN */}
+      <Route
+        path="/admin/login"
+        element={
+          isAdminAuthenticated()
+            ? <Navigate to="/admin" replace />
+            : <AdminLogin />
+        }
+      />
 
-        <Route index element={<Dashboard />} />
+      {/* PROTECTED ADMIN ROUTES */}
+      <Route element={<ProtectedAdminRoute />}>
+        <Route
+          path="/admin"
+          element={<AdminLayout />}
+        >
+          <Route
+            index
+            element={<Dashboard />}
+          />
 
-        {/* Products */}
-        <Route path="products" element={<Products />} />
-        <Route path="products/add" element={<AddProduct />} />
-        <Route path="products/edit/:id" element={<EditProduct />} />
+          <Route
+            path="products"
+            element={<Products />}
+          />
 
-        {/* Categories */}
-        <Route path="categories" element={<Categories />} />
+          <Route
+            path="products/add"
+            element={<AddProduct />}
+          />
 
-        {/* Inventory */}
-        <Route path="inventory" element={<Inventory />} />
+          <Route
+            path="products/edit/:id"
+            element={<EditProduct />}
+          />
 
-        {/* Orders */}
-        <Route path="orders" element={<Orders />} />
+          <Route
+            path="categories"
+            element={<Categories />}
+          />
 
-        {/* Customers */}
-        <Route path="customers" element={<Customers />} />
+          <Route
+            path="inventory"
+            element={<Inventory />}
+          />
 
-        {/* Payments */}
-        <Route path="payments" element={<Payments />} />
+          <Route
+            path="orders"
+            element={<Orders />}
+          />
 
-        {/* Invoices */}
-        <Route path="invoices" element={<Invoices />} />
+          <Route
+            path="customers"
+            element={<Customers />}
+          />
 
-        {/* Coupons */}
-        <Route path="coupons" element={<Coupons />} />
+          <Route
+            path="payments"
+            element={<Payments />}
+          />
 
-        {/* Reports */}
-        <Route path="reports" element={<Reports />} />
+          <Route
+            path="invoices"
+            element={<Invoices />}
+          />
 
-        {/* Notifications */}
-        <Route path="notifications" element={<Notifications />} />
+          <Route
+            path="coupons"
+            element={<Coupons />}
+          />
 
-        {/* Users & Roles */}
-        <Route path="users" element={<Users />} />
+          <Route
+            path="reports"
+            element={<Reports />}
+          />
 
-        {/* Activity Logs */}
-        <Route path="activity-logs" element={<ActivityLogs />} />
+          <Route
+            path="notifications"
+            element={<Notifications />}
+          />
 
-        {/* Settings */}
-        <Route path="settings" element={<Settings />} />
+          <Route
+            path="users"
+            element={<Users />}
+          />
 
+          <Route
+            path="activity-logs"
+            element={<ActivityLogs />}
+          />
+
+          <Route
+            path="settings"
+            element={<Settings />}
+          />
+        </Route>
       </Route>
     </Routes>
   )

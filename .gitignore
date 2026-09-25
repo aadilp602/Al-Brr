@@ -8,6 +8,12 @@ pnpm-debug.log*
 lerna-debug.log*
 
 node_modules
+
+# Environment files - NEVER push admin credentials
+.env
+.env.local
+.env.*.local
+
 dist
 dist-ssr
 *.local
